@@ -1,0 +1,66 @@
+/* 
+Colores: 
+azul-gris: #9FD2D6
+azul: #377ECO
+púrpura: #5460AC
+
+*/
+
+/* <weight>: Use a value from 100 to 900
+<uniquifier>: Use a unique and descriptive class name */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --inter-font: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  display: flex;
+  font-family: var(--inter-font);
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.foto-usuario {
+  width: 200px;
+  height: 200px;
+}
+
+.title {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+img {
+  width: 25px;
+  height: 25px;
+}
+
+.linea {
+  border-right: 1px solid;
+}
+
+#login {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.nav-anchor {
+  text-decoration: none;
+  color: grey;
+  font-size: 20px;
+}
+
+.navigation {
+  margin-bottom: 20px;
+  padding: 0 0 10px;
+}
