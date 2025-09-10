@@ -24,21 +24,25 @@
     </header>
 
     <!-- Search -->
-    <section class="px-3 pt-2">
-      <div class="input-group rounded-3">
-        <span class="input-group-text bg-white border-end-0">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </span>
-        <input id="q" type="search" class="form-control border-start-0"
-               placeholder="Generation, AIEP, Duoc UC..." autocomplete="off">
-      </div>
-    </section>
+   <!-- CONTENEDOR COMÚN (mismo ancho para todo) -->
+    <div class="container-lg my-2" id="insti-wrap">
+      <!-- Search -->
+      <section class="pt-2">
+        <div class="input-group rounded-3">
+          <span class="input-group-text bg-white border-end-0">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+          <input id="q" type="search" class="form-control border-start-0"
+                placeholder="Generation, AIEP, Duoc UC..." autocomplete="off">
+        </div>
+      </section>
 
-    <!-- Listado -->
-    <section class="px-3 pb-3">
-      <ul id="listado" class="list-unstyled d-flex flex-column gap-3 mt-3"></ul>
+      <!-- Listado -->
+      <section class="pb-4">
+        <ul id="listado" class="list-unstyled d-flex flex-column gap-3 mt-3"></ul>
+      </section>
+    </div>
 
-    </section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

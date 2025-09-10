@@ -60,6 +60,14 @@ body {
   color: #222;
 }
 
+/* Reutiliza el mismo ancho y centrado */
+.search-section{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+
 /* Lista de instituciones */
 #listado {
   list-style: none;
@@ -137,9 +145,21 @@ body {
 .bottom-nav a.active { color: #000; font-weight: bold; }
 
 /* --- Responsive --- */
-@media (min-width: 992px) {
-  #listado {
-    max-width: 900px;
-    margin: 0 auto;
+@media (max-width: 991px) {
+  .search-section {
+    max-width: 100%;
+    padding: 0 12px;
   }
 }
+
+.inst-card{
+  padding: 18px 22px;
+  min-height: 120px;
+  border-radius: 12px;
+}
+
+.inst-name{ font-size: 16px; }
+.inst-type{ font-size: 13px; }
+.inst-meta{ font-size: 13px; gap: 8px; }
+.inst-desc{ font-size: 14px; line-height: 1.4; }
+.rating i{ font-size: 14px; }
