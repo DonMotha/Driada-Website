@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Perfil de Usuario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="user-style.css" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container fluid">
+      <div class="text-center">
+        <!-- Encabezado -->
+        <img
+          class="foto-usuario"
+          src="images/LogoUsuario.svg"
+          alt="Imagen vacía de usuario invitado"
+        />
+        <h1 class="title">Usuario invitado</h1>
+        <p class="subtitle">Explora sin límites</p>
+      </div>
+      <hr />
+      <div class="row">
+        <!-- Número de guardados -->
+        <div class="col text-center linea">
+          <h4>12</h4>
+          <p>Instituciones guardadas</p>
+        </div>
+        <!-- <div class="col-1"></div> -->
+        <div class="col text-center">
+          <h4>5</h4>
+          <p>Carreras favoritas</p>
+        </div>
+      </div>
+
+      <hr />
+      <div class="sections">
+        <div class="row">
+          <!-- Elementos guardados -->
+          <img src="images/bookmark.svg" class="col-1" />
+          <h5 class="col-11">Elementos Guardados</h5>
+        </div>
+        <hr />
+        <div class="row">
+          <!-- Historial de búsqueda -->
+          <img src="images/Clock.svg" class="col-1" />
+          <h5 class="col-11">Historial de Búsqueda</h5>
+        </div>
+        <hr />
+        <div class="row">
+          <!-- Becas y beneficios -->
+          <img src="images/Certificate.svg" class="col-1" />
+          <h5 class="col-11">Becas y Beneficios</h5>
+        </div>
+        <hr />
+        <div class="row">
+          <!-- Configuración -->
+          <img src="images/Setting.svg" class="col-1" />
+          <h5 class="col-11">Configuración</h5>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Iniciar y cerrar sesión -->
+      <div class="container text-center d-grid">
+        <a
+          type="button"
+          class="btn btn-primary btn-lg"
+          id="login"
+          href="index.html"
+          target="_blank"
+          >Iniciar Sesión</a
+        >
+        <div class="logout" style="margin-bottom: 70px">
+          <img src="images/cerrarsesión.svg" />
+          <span class="logout-word  ">Cerrar Sesión</span>
+        </div>
+      </div>
+
+      <!-- Navegación -->
+      <div class="row text-center navigation">
+        <div class="col">
+          <a href="/mati/home.html" class="nav-anchor" target="_blank">
+            <img class="col" src="images/inicio.svg" />
+            <span class="col nav-word">Inicio</span>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="#" class="nav-anchor">
+            <img class="col" src="images/instituciones.svg" />
+            <span class="col nav-word">Instituciones</span>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="#" class="nav-anchor">
+            <img class="col" src="images/search.svg" />
+            <span class="col nav-word">Buscar</span>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="#" class="nav-anchor">
+            <img class="col" src="images/Personas.svg" />
+            <span class="col nav-word">Personas</span></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

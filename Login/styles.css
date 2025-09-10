@@ -1,0 +1,129 @@
+/* styles.css */
+/* Reset basico */
+* {               /* Selecciona todos los elementos */          
+    margin: 0;    /* Elimina margenes por defecto */
+    padding: 0;   /* Elimina relleno por defecto */
+    box-sizing: border-box;/* Incluye el padding y border en el tamaño total del elemento */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;/* Fuente por defecto */
+}
+body {                      /* Estilos para el cuerpo del documento */
+  background-color: #fff;/* Color de fondo blanco */
+  display: flex;           /* Usar flexbox para centrar contenido */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;     /* Centrar verticalmente */
+  height: 100vh;           /* Altura completa de la ventana */
+}
+
+.login-container {                     /* Contenedor del formulario de login */
+  background-color: #f9f9f9;         /* Color de fondo claro */
+  padding: 20px;                       /* Relleno interno */
+  border-radius: 8px;                  /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 100%;                         /* Ancho completo */
+  max-width: 360px;                    /* Ancho fijo */
+  text-align: center;                  /* Centrar texto */
+}
+
+.logo {                                /* Estilos para el logo */
+  width: 100px;                        /* Ancho del logo */
+  margin: 0 auto 10px;                 /* Margen inferior */
+}
+
+.app-name {                            /* Estilos para el nombre de la app */
+  font-size: 14px;                     /* Tamaño de fuente grande */
+  margin-bottom: 10px;                 /* Margen inferior */
+  color: #333;                       /* Color de texto oscuro */
+}
+/* titulo */
+.title {                               /* Estilos para el titulo */
+  font-size: 35px;                     /* Tamaño de fuente grande */
+  margin-bottom: 20px;                 /* Margen inferior */
+  font-weight: bold;                   /* Negrita */
+  color: #000;                       /* Color de texto oscuro */
+}
+/* formulario */
+.login-form input{
+  width: 100%;                        /* Ancho completo */
+  padding: 12px;                      /* Relleno interno */
+  margin-bottom: 12px;                /* Margen inferior */
+  border: 1px solid #ddd;           /* Borde gris claro */
+  border-radius: 8px;                 /* Bordes redondeados */
+  font-size: 14px;                    /* Tamaño de fuente */
+}
+
+.btn-primary {                           /* Estilos para el boton primario */
+  width: 100%;                           /* Ancho completo */
+  padding: 12px;                         /* Relleno interno */
+  background-color: #1a73e8;           /* Color de fondo azul */
+  color: #fff;                         /* Color de texto blanco */
+  border: none;                          /* Sin borde */
+  border-radius: 8px;                    /* Bordes redondeados */
+  font-size: 16px;                       /* Tamaño de fuente */
+  font-weight: bold;                     /* Tamaño de fuente */
+  cursor: pointer;                       /* Cambia el cursor al pasar sobre el boton */
+  margin-bottom: 12px;                   /* Cambia el cursor al pasar sobre el boton */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de profundidad */
+}
+.btn-primary:hover {                     /* Efecto hover para el boton primario */
+  background-color: #1669c1;           /* Color de fondo azul mas oscuro */
+}
+.btn-secondary {                         /* Estilos para el boton secundario */
+  width: 100%;                           /* Ancho completo */
+  padding: 12px;                         /* Relleno interno */
+  background-color: transparent;           /* Color de fondo gris claro */
+  color: #555;                         /* Color de texto oscuro */
+  border: 1px solid #777;                       /* Sin borde */
+  border-radius: 8px;                    /* Bordes redondeados */
+  font-size: 14px;                       /* Tamaño de fuente */
+  cursor: pointer;                       /* Cambia el cursor al pasar sobre el boton */
+}
+.btn-secondary:hover {                   /* Efecto hover para el boton secundario */
+  background-color: #f0f0f0;           /* Color de fondo gris mas oscuro */
+}
+
+/* linea divisoria */
+.divider {                             /* Estilos para el texto separador */
+  margin: 12px 0;                      /* Margen vertical */
+  color: #777;                        /* Color de texto gris */
+  font-size: 14px;                    /* Tamaño de fuente */
+}
+ 
+/* redes sociales */
+.social-login{
+  display: flex;                       /* Usar flexbox para alinear iconos */
+  justify-content: center;            /* Centrar horizontalmente */
+  gap: 16px;                          /* Espacio entre iconos */
+  margin-bottom: 20px;                /* Margen inferior */
+}
+.social-login button{
+  background: #f5f5f5; /* Fondo gris claro */
+  border: none; /* Sin borde */
+  border-radius: 12px;/* Bordes redondeados */
+  padding: 10px; /* Relleno interno */
+  cursor: pointer;/* Cambia el cursor al pasar sobre el boton */
+  transition: background 0.3s; /* Transición suave para el fondo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de profundidad */
+}
+.social-login button:hover {
+  background: #e8e8e8; /* Fondo gris más oscuro al pasar el cursor */
+}
+.social-login img {
+  width: 30px;
+  height: 30px;
+  align-items: center ;
+}
+
+/* registro */
+.regiter-text {
+  font-size: 10px;                    /* Tamaño de fuente */
+  color: #444;                       /* Color de texto gris */
+}
+.register-text a {
+  color: #1a73e8;                    /* Color de enlace azul */
+  text-decoration: none;              /* Sin subrayado */
+  font-weight: bold;                  /* Negrita */
+}
+
+.register-text a:hover {
+  text-decoration: underline;         /* Subrayado al pasar el cursor */
+}
