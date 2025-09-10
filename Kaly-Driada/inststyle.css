@@ -1,0 +1,365 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+@font-face {
+    font-family: 'Inter';
+    src: url("\Fonts\Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype"),
+         url("\Fonts\Inter-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+        body {
+            font-family: "Inter";
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+        }
+
+        .back-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            min-height: 600px;
+        }
+
+        .image-section {
+            background-color: #e8e8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .camera-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+        }
+
+        .camera-icon::before {
+            content: "📷";
+            font-size: 40px;
+            filter: grayscale(1);
+        }
+
+        .percentage {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            background-color: #999;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .content-section {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .institution-header {
+            margin-bottom: 40px;
+        }
+
+        .institution-main {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .institution-logo {
+            width: 80px;
+            height: 80px;
+            background-color: #f0f0f0;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 2px solid #e0e0e0;
+        }
+
+        .institution-info h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .tags {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #e8f4fd;
+            color: #0066cc;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            border: 1px solid #cce7ff;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .star {
+            color: #ffc107;
+            font-size: 22px;
+        }
+
+        .description-section {
+            flex: 1;
+            margin-bottom: 40px;
+        }
+
+        .description-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding: 16px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #0066cc;
+        }
+
+        .calendar-icon {
+            width: 24px;
+            height: 24px;
+            color: #0066cc;
+            font-size: 20px;
+        }
+
+        .description-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .description-subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        .description-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+            text-align: justify;
+        }
+
+        .actions-section {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .options-btn {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(51, 51, 51, 0.3);
+        }
+
+        .options-btn:hover {
+            background-color: #444;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(51, 51, 51, 0.4);
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: #666;
+            border: 2px solid #ddd;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .secondary-btn:hover {
+            border-color: #333;
+            color: #333;
+        }
+
+        .bottom-nav {
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+            padding: 0 40px;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 16px;
+            transition: all 0.2s;
+        }
+
+        .nav-item:hover {
+            background-color: #f8f9fa;
+            color: #333;
+            transform: translateY(-2px);
+        }
+
+        .nav-item.active {
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        .nav-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .profile-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-section {
+                min-height: 300px;
+            }
+            
+            .content-section {
+                padding: 30px;
+            }
+            
+            .institution-info h1 {
+                font-size: 32px;
+            }
+            
+            .nav-container {
+                gap: 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 20px;
+            }
+            
+            .header-content {
+                padding: 0 20px;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .institution-main {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .institution-info h1 {
+                font-size: 28px;
+            }
+            
+            .nav-container {
+                gap: 40px;
+            }
+        }
+
+        
