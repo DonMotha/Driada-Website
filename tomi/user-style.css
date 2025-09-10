@@ -8,11 +8,10 @@ púrpura: #5460AC
 
 /* <weight>: Use a value from 100 to 900
 <uniquifier>: Use a unique and descriptive class name */
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-:root {
+/* :root {
   --inter-font: "Inter", sans-serif;
-}
+} */
 
 * {
   margin: 0;
@@ -23,7 +22,7 @@ púrpura: #5460AC
 body {
   background-color: white;
   display: flex;
-  font-family: var(--inter-font);
+  font-family: "Inter", sans-serif;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -37,11 +36,41 @@ body {
 .title {
   font-size: 35px;
   font-weight: bold;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: 400; */
+  font-style: normal;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: italic;
+}
+
+div h4 {
+  color: #377ec0;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+div p {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
 }
 
 img {
   width: 25px;
   height: 25px;
+}
+
+.row div {
+  font-weight: 100;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .linea {
@@ -54,9 +83,21 @@ img {
   margin-bottom: 10px;
 }
 
+.logout-word {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  
+}
+
 .nav-anchor {
   text-decoration: none;
-  color: grey;
+  color: rgb(91, 91, 91);
+  font-size: 20px;
+}
+
+.nav-word {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
   font-size: 20px;
 }
 
