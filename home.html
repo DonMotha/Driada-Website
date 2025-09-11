@@ -1,106 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <!--- Lincks de iconos y fuentes --->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=explore_nearby" />
     <title>Qué Estudiar</title>
     <!-- Linck Swiperjs CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Linck Font Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style-Home.css">
 </head>
+
 <body>
-    <header>
-        <div class="icon"><i class="fa-solid fa-robot"></i></div>
-        <img src="/imagenes/logo.png" alt="Logo" class="logo" width="90" height="90">
-        <h1>Qué Estudiar?</h1>
-    </header>
-    <!--Buscador-->
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Buscar carreras, instituciones...">
-        <p>¿Ya sabes qué estudiar? Busca becas y beneficios</p>
-        <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i>Buscar aquí</button>
-    </div>
-    <!--Instituciones-->
-    <nav class="top-nav">
-     <h2>Instituciones y fundaciones</h2>
-     <div class="cards-container swiper">
-        <div class="card-wrapper">
-            <ul class="card-list swiper-wrapper">
-                <li class="card-item swiper-slide">
-                    <p class="badge DUOC-UC">Institutos y Fundaciones</p>
-                    <h2 class="card-title">DUOC UC</h2>
-                    <p class="type">Instituto Profesional</p>
-                    <div class="rating">★★★★☆ 4.5</div>
-                    <p class="location"><i class="fa fa-location-dot"></i> Santiago, Chile</p>
-                    <button class="card-button material-symbols-rounded">
-                        arrow_forward
-                    </button>
-                </li>
-                <li class="card-item swiper-slide">
-                    <p class="badge AIEP">Institutos y Fundaciones</p>
-                    <h2 class="card-title">AIEP</h2>
-                    <p class="type">Instituto Profesional</p>
-                    <div class="rating">★★★★☆ 4.2</div>
-                    <p class="location"><i class="fa fa-location-dot"></i> Santiago, Chile</p>
-                    <button class="card-button material-symbols-rounded">
-                        arrow_forward
-                    </button>
-                </li>
-                <li class="card-item swiper-slide">
-                    <p class="badge INACAP">Institutos y Fundaciones</p>
-                    <h2 class="card-title">INACAP</h2>
-                    <p class="type">Instituto Profesional</p>
-                    <div class="rating">★★★★☆ 4.0</div>
-                    <p class="location"><i class="fa fa-location-dot"></i> Santiago, Chile</p>
-                    <button class="card-button material-symbols-rounded">
-                        arrow_forward
-                    </button>
-                </li>
-                <li class="card-item swiper-slide">
-                    <p class="badge CFT-San-Agustín">Institutos y Fundaciones</p>
-                    <h2 class="card-title">CFT San Agustín</h2>
-                    <p class="type">Centro de Formación Técnica</p>
-                    <div class="rating">★★★★☆ 4.0</div>
-                    <p class="location"><i class="fa fa-location-dot"></i> Santiago, Chile</p>
-                    <button class="card-button material-symbols-rounded">
-                        arrow_forward
-                    </button>
-                </li>
-                <li class="card-item swiper-slide">
-                    <p class="badge CFT-Teodoro-Wickel">Institutos y Fundaciones</p>
-                    <h2 class="card-title">CFT Teodoro Wickel</h2>
-                    <p class="type">Centro de Formación Técnica</p>
-                    <div class="rating">★★★★☆ 4.0</div>
-                    <p class="location"><i class="fa fa-location-dot"></i> Santiago, Chile</p>
-                    <button class="card-button material-symbols-rounded">
-                        arrow_forward
-                    </button>
-                </li>
-            </ul>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+    <!--Hero-->
+    <section class="hero">
+        <div class="container">
+            <h1>Encuentra la <span class="highlight">beca perfecta</span><br> para tu futuro</h1>
+            <p class="lead mt-3 mb-4">Conectamos estudiantes talentosos con oportunidades educativas excepcionales. Tu
+                sueño está a un clic de distancia.</p>
+
+
+            <!--Buscador-->
+            <div class="input-group mb-3 w-50 mx-auto">
+                <input type="text" class="form-control" placeholder="Buscar carreras, instituciones...">
+                <p>¿Ya sabes qué estudiar? Busca becas y beneficios</p>
+                <button class="btn btn-primary">Buscar aquí</button>
+            </div>
         </div>
-     </div>
-    </nav>
+    </section>
+
+
+    <!--Instituciones-->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center fw-bold">Instituciones y fundaciones destacadas</h2>
+            <p class="text-center text-muted mb-5">Descubre las mejores oportunidades educativas en instituciones
+                reconocidas por su excelencia academica</p>
+
+            <!--Carrusel-->
+            <div id="intitutionsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!--Card 1-->
+
+                <div class="carousel-item active">
+                    <div class="card mx-auto" style="max-width: 20rem;">
+                        <img src="/imagenes/pexels-expressivestanley-1454360 1 (1).svg" class="card-img-top"
+                            alt="DUOC UC Logo">
+                        <div class="card-body">
+                            <span class="tag instituto">institutos</span>
+                            <span class="float-end text muted"> 150 becas</span>
+                            <h5 class="card-title mt-2">Institutito Tecnologico Superior</h5>
+                            <p class="card-text">Formacion tecnica y tecnologica de alta calidad para el desarrollo
+                                profesional.</p>
+                            <p class="text-muted">Santiago, Chile</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Card 2-->
+                <div class="carousel-item active">
+                    <div class="card mx-auto" style="max-width: 20rem;">
+                        <img src="/imagenes/logo.png" class="card-img-top"
+                            alt="logo">
+                        <div class="card-body">
+                            <span class="tag instituto">institutos</span>
+                            <span class="float-end text muted"> 150 becas</span>
+                            <h5 class="card-title mt-2">Institutito Tecnologico Superior</h5>
+                            <p class="card-text">Formacion tecnica y tecnologica de alta calidad para el desarrollo
+                                profesional.</p>
+                            <p class="text-muted">Santiago, Chile</p>
+                        </div>
+                    </div>
+                </div>
+                <!--agregar mas-->
+                <!--Controles-->
+                <button class="carousel-control-prev" type="button" data-bs-target="#institutionsCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#institutionsCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+                 <div class="card-wrapper"> 
+                    <ul class="card-list swiper-wrapper">
+                        <li class="card-item swiper-slide">
+                            <img src="/imagenes/pexels-expressivestanley-1454360 1 (1).svg" alt="DUOC UC Logo"
+                                class="card-image">
+                            <p class="badge DUOC-UC">Institutos y Fundaciones</p>
+                            <h2 class="card-title">DUOC UC</h2>
+                            <p class="type">Instituto Profesional</p>
+                            <div class="rating">★★★★☆ 4.5</div>
+                            <p class="location"><span class="material-symbols-outlined">explore_nearby</span><i
+                                    class="fa fa-location-dot"></i> Santiago, Chile</p>
+                            <button class="card-button material-symbols-rounded">
+                                arrow_forward
+                            </button>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <p class="badge AIEP">Institutos y Fundaciones</p>
+                            <h2 class="card-title">AIEP</h2>
+                            <p class="type">Instituto Profesional</p>
+                            <div class="rating">★★★★☆ 4.2</div>
+                            <p class="location"><i class="fa fa-location-dot"></i> Santiago, Chile</p>
+                            <button class="card-button material-symbols-rounded">
+                                arrow_forward
+                            </button>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <p class="badge INACAP">Institutos y Fundaciones</p>
+                            <h2 class="card-title">INACAP</h2>
+                            <p class="type">Instituto Profesional</p>
+                            <div class="rating">★★★★☆ 4.0</div>
+                            <p class="location"><i class="fa fa-location-dot"></i> Santiago, Chile</p>
+                            <button class="card-button material-symbols-rounded">
+                                arrow_forward
+                            </button>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <p class="badge CFT-San-Agustín">Institutos y Fundaciones</p>
+                            <h2 class="card-title">CFT San Agustín</h2>
+                            <p class="type">Centro de Formación Técnica</p>
+                            <div class="rating">★★★★☆ 4.0</div>
+                            <p class="location"><i class="fa fa-location-dot"></i> Santiago, Chile</p>
+                            <button class="card-button material-symbols-rounded">
+                                arrow_forward
+                            </button>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <p class="badge CFT-Teodoro-Wickel">Institutos y Fundaciones</p>
+                            <h2 class="card-title">CFT Teodoro Wickel</h2>
+                            <p class="type">Centro de Formación Técnica</p>
+                            <div class="rating">★★★★☆ 4.0</div>
+                            <p class="location"><i class="fa fa-location-dot"></i> Santiago, Chile</p>
+                            <button class="card-button material-symbols-rounded">
+                                arrow_forward
+                            </button>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <p class="badge CFT-Teodoro-Wickel">Institutos y Fundaciones</p>
+                            <h2 class="card-title">CFT Teodoro Wickel</h2>
+                            <p class="type">Centro de Formación Técnica</p>
+                            <div class="rating">★★★★☆ 4.0</div>
+                            <p class="location"><i class="fa fa-location-dot"></i> Santiago, Chile</p>
+                            <button class="card-button material-symbols-rounded">
+                                arrow_forward
+                            </button>
+                        </li>
+                    </ul>
+                </div> 
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h3 class="fw-bold">¿Necesitas apoyo personalizado?</h3>
+            <p class="mb-4">Nuestro equipo de asesores académicos está listo para ayudarte a encontrar la mejor opción.
+            </p>
+            <a href="#" class="btn btn-light btn-lg">Contáctanos ahora</a>
+        </div>
+    </section>
     <!--Barra navegacion inferior-->
     <footer>
         <div class="footer-content"></div>
-                <p>&copy; 2024 Qué Estudiar. Todos los derechos reservados.</p> 
-            <nav class="bottom-nav">
-                <ul>
+        <p>&copy; 2024 Qué Estudiar. Todos los derechos reservados.</p>
+        <nav class="bottom-nav">
+            <ul>
                 <li><a href="#search-input">Buscar</a></li>
                 <li><a href="#institutions">Instituciones</a></li>
                 <li><a href="#benefits">Beneficios</a></li>
-                </ul>
-            </nav>
+            </ul>
+        </nav>
         </div>
     </footer>
     <!-- Link SwiperJS script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Link custom script-->
     <script src="/script-Home.js"></script>
+    <!-- Link Font bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
