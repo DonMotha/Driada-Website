@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generation - Perfil Institución</title>
-    <link href="/inststyle.css" type="text/css" rel="stylesheet">
+    <title>Perfil Institución</title>
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="/favicon-32x32.png"> -->
+    <link href="inststyle.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -14,23 +15,36 @@
         <div class="nav-container">
             <a href="#" class="nav-item">
                 <div class="nav-icon">
-                    <img src="\Images\logo.png" class="nav-icon">
+                    <img src="Images/logo.png" class="nav-icon">
                 </div>
             </a>
-            <a href="#" class="nav-item">
-                <div class="nav-icon">🏠</div>
+            <a href="/Home/home.html" class="nav-item">
+                <div class="nav-icon">
+                    <img class="col" src="/PerfilUsuario/images/inicio.svg" />  <!--🏠-->
+                </div>
                 <span>Inicio</span>
             </a>
-            <a href="#" class="nav-item active">
-                <div class="nav-icon">🏢</div>
+            <a href="/Instituciones/insti.html" class="nav-item active">
+                <div class="nav-icon">
+                    <img class="col" src="/PerfilUsuario/images/instituciones.svg" /><!--🏢-->
+                </div>
                 <span>Instituciones</span>
             </a>
             <a href="#" class="nav-item">
-                <div class="nav-icon">🔍</div>
+                <div class="nav-icon">
+                    <img class="col" src="/PerfilUsuario/images/search.svg" /><!--🔍-->
+                </div>
                 <span>Buscar</span>
             </a>
-            <a href="#" class="nav-item">
-                <div class="nav-icon">👥</div>
+            <a href="/PerfilUsuario/user.html" class="nav-item">
+                <div class="nav-icon">
+                    <!-- <img class="col" src="images/Personas.svg" />--> 
+                     <img 
+                        class="foto-usuario"
+                        src="/PerfilUsuario/images/LogoUsuario.svg"
+                        style="width: 45px;"/>
+                        <!-- 👥 -->
+                </div>
                 <span>Perfil</span>
             </a>
         </div>
@@ -38,7 +52,7 @@
 
     <header class="header">
         <div class="header-content">
-            <button class="back-btn">←</button>
+            <a href="/Instituciones/insti.html"><button class="back-btn">←</button></a>
             <h1 class="header-title">Perfil de Institución</h1>
         </div>
     </header>
@@ -53,7 +67,9 @@
             <div class="content-section">
                 <div class="institution-header">
                     <div class="institution-main">
-                        <div class="institution-logo"></div>
+                        <div class="institution-logo">
+                            <img src="Images/Generation_Chile_logo_BLUE_v2.svg" alt="">
+                        </div>
                         <div class="institution-info">
                             <h1>Generation</h1>
                             <div class="tags">
@@ -85,7 +101,7 @@
 
                 <div class="actions-section">
                     <button class="options-btn">Ver opciones</button>
-                    <button class="secondary-btn">Contactar</button>
+                    <a href="https://chile.generation.org/find-a-career/" type="button" class="secondary-btn">Contactar</a>
                 </div>
             </div>
         </div>

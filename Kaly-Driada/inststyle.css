@@ -129,15 +129,20 @@
         }
 
         .institution-logo {
-            width: 80px;
+            width: 160px;
             height: 80px;
-            background-color: #f0f0f0;
-            border-radius: 16px;
+            /* background-color: #f0f0f0; */
+            background-color: white;
+            /* border-radius: 16px; */
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            border: 2px solid #e0e0e0;
+            /* border: 2px solid #e0e0e0; */
+        }
+
+        .institution-logo img {
+            width: 160px;
         }
 
         .institution-info h1 {
@@ -267,6 +272,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
+            text-decoration: none;
         }
 
         .secondary-btn:hover {
@@ -278,7 +284,7 @@
             background: white;
             border-top: 1px solid #e0e0e0;
             padding: 20px 0;
-            margin-top: 0px;
+            margin-top: 10px;
         }
 
         .nav-container {

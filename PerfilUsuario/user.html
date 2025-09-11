@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="/favicon-32x32.png"> -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" /> -->
     <title>Perfil de Usuario</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -79,27 +84,28 @@
           type="button"
           class="btn btn-primary btn-lg"
           id="login"
-          href="index.html"
-          target="_blank"
+          href="/Login/index.html"
           >Iniciar Sesión</a
         >
         <div class="logout" style="margin-bottom: 70px">
           <img src="images/cerrarsesión.svg" />
-          <span class="logout-word  ">Cerrar Sesión</span>
+          <a href="/Login/index.html" class="nav-anchor">
+            <span class="logout-word">Cerrar Sesión</span>
+          </a>
         </div>
       </div>
 
       <!-- Navegación -->
       <div class="row text-center navigation">
         <div class="col">
-          <a href="/mati/home.html" class="nav-anchor" target="_blank">
+          <a href="/Home/home.html" class="nav-anchor">
             <img class="col" src="images/inicio.svg" />
             <span class="col nav-word">Inicio</span>
           </a>
         </div>
 
         <div class="col">
-          <a href="#" class="nav-anchor">
+          <a href="/Instituciones/insti.html" class="nav-anchor">
             <img class="col" src="images/instituciones.svg" />
             <span class="col nav-word">Instituciones</span>
           </a>
