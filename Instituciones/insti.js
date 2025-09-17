@@ -112,12 +112,19 @@
     }).join('');
 
     // Navegación al detalle
-    $$('.inst-card', ul).forEach(li=>{
+    // $$('.inst-card', ul).forEach(li=>{
+    //   li.addEventListener('click', ()=>{
+    //     const id = li.getAttribute('data-id');
+    //     window.location.href = `detalle.html?id=${encodeURIComponent(id)}`;
+    //   });
+    //   li.addEventListener('keydown', e=>{ if(e.key==='Enter') li.click(); });
+    // });
+
+     $$('.inst-card', ul).forEach(li=>{
       li.addEventListener('click', ()=>{
-        const id = li.getAttribute('data-id');
-        window.location.href = `detalle.html?id=${encodeURIComponent(id)}`;
+        window.location.href = "../Kaly-Driada/institucion.html";
       });
-      li.addEventListener('keydown', e=>{ if(e.key==='Enter') li.click(); });
+      li.addEventListener('keydown', e=>{ if(e.key === 'Enter') li.click(); });
     });
   }
 
