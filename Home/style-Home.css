@@ -1,242 +1,168 @@
-/* Import Google Fonts - Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-}
+/* Tipografía global */
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    background: #f4f4f4;
-    color: #333;
-    height: 1350px;
-}
-header {
-    text-align: center;
-    padding: 1rem;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-header .icon {
-    font-size: 40px;
-    margin-bottom: 0.5rem;
-}
-.search-container {
-    margin: 1rem auto;
-    text-align: center;
-    width: 90%;
-    max-width: 600px;
-}
-.search-container input[type="text"] {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-.search-container p {
-    margin: 1rem 0;
-    color: #666;
-    overflow: auto;
-}
-.search-container button {
-    padding: 0.7rem 1.5rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    background: #222;
-    color: #fff;
-    cursor: pointer;
-}
-h2 {
-    margin: 2rem 1rem 1rem;
-}
-.card-wrapper {
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    padding-bottom: 1rem;
-    scroll-behavior: smooth;
-    background: linear-gradient(145deg, #fff, #f8f9fa);
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-}
-.cards-container {
-    background: linear-gradient(145deg, #fff, #f8f9fa);
-    border-radius: 12px;
-    padding: 1rem;
-    flex: 0 0 250px;   /* 🎯 tamaño fijo más ancho */
-    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
-    transition: transform 0.2s, box-shadow 0.2s;
-
-}
-.card-list .card-item{
-    list-style: none;
-}
-.card-list .card-item {
-    width: 300px;
-    flex-shrink: 0;
-    background: #fff;
-    padding: 18px;
-    border-radius: 20px;
-    text-decoration: none;
-    border: 2px solid transparent;
-    box-shadow: 0 10px 10px rgba(93, 128, 133, 0.1);
-    transition: 0.2s ease;
-}
-.card-list .card-item:hover {
-    border-color: #8e94b0;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-.card-list .card-item .badge {
-    color: #000000;
-    padding: 8px 16px;
-    font-size: 0.95rem;
-    font-weight: 400;
-    margin: 22px 0 18px;
-    background: #e0e0e0;
-    width: fit-content;
-    border-radius: 150px;
-}
-.card-list .card-item .badge.DUOC-UC {
-    color: #f04f52;
-    background: #fbdf54;
-}
-.card-list .card-item .badge.AIEP {
-    color: #c75b3e;
-    background: #ffccbc;
-}
-.card-list .card-item .badge.INACAP {
-    color: #3949ab; 
-    background: #c5cae9;
-}
-.card-list .card-item .badge.CFT-San-Agustín {
-    color: #689f38; 
-    background: #dcedc8;
-}
-.card-list .card-item .badge.CFT-Teodoro-Wickel {
-    color: #f57c00; 
-    background: #ffe0b2;
-}
-.card-list .card-item .card-title {
-    font-size: 1.19rem;
-    color: #5460ac;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-.card-list .card-item .card-button {
-    height: 35px;
-    width: 35px;
-    color: #666;
-    border-radius: 50%;
-    margin: 30px 0 5px;
-    background: 2px solid #12baaa;
-    transition: 0.4s ease;
-}
-.card-list .card-item:hover .card-button {
-    color: #fff;
-    background: #9fd2d6;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+  color: #333;
 }
 
-.card h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #2c3e50;
-}
-.rating {
-    color: gold;
-    font-size: 0.9rem;
-}
-.location {
-    font-size: 0.85rem;
-    color: #666;
-    margin-top: 0.5rem;
-}
-.card-item .card-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+/* Navbar */
+.navbar {
+  padding: 0.8rem 1rem;
+  font-weight: 500;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+.navbar .nav-link.active {
+  color: #1062FE !important;
 }
 
-/* Barra inferior */
-nav.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+.navbar-brand {
+  font-weight: 700;
+  color: #1062FE !important;
+}
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  
-    background: #ffffff;
-    border-top: 1px solid #e0e0e0;
-    padding: 0.8rem 0;
+/* Hero (landing principal) */
+.hero {
+  background: #EAF5FF; /* celeste clarito */
+  padding: 6rem 1rem;
+  text-align: center;
+}
 
-    z-index: 1000
+.hero h1 {
+  font-size: 2.5rem;
+  line-height: 1.3;
 }
-nav.bottom-nav a {
-     text-decoration: none;
-     text-align: center;
-     font-size: 0.85rem;
-     color: #0984e3;
-     transition: color 0.2s;
+
+.hero .highlight {
+  color: #1062FE; /* azul más fuerte */
 }
-nav.bottom-nav a i {
-    display: block;
-    font-size: 1.2rem;
-    margin-bottom: 0.2rem;
+
+/* Buscador */
+#searchInput {
+  height: 48px;
+  font-size: 1rem;
 }
-nav.bottom-nav a.active {
-    color: #0984e3;
-    font-weight: bold;
+
+#searchButton {
+  height: 48px;
+  font-size: 1rem;
+  font-weight: 600;
 }
-body { font-family: 'Inter', sans-serif; }
-    .hero { background: #f0f8ff; padding: 5rem 1rem; text-align: center; }
-    .hero .highlight { color: #377EC0; }
-    .institutions { padding: 4rem 1rem; background: #fff; }
-    .cta-section { background: #377EC0; color: white; padding: 3rem 1rem; border-radius: 12px; text-align: center; margin: 3rem auto; max-width: 900px; }
-    .cta-section .btn { background: #fff; color: #377EC0; font-weight: 600; }
-    .card img { height: 180px; object-fit: cover; }
-    .rating-badge {
-      position: absolute; top: 10px; right: 10px;
-      background: #fff; color: #377EC0;
-      border-radius: 8px; padding: 2px 8px;
-      font-weight: 600; font-size: 0.85rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+#searchButton.btn-primary {
+  background: #1062FE;
+  border: none;
 }
-/* FOOTER */
-.footer {
-  width: 100%;
-  max-width: 100%;  /* que abarque todo */
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  padding: 40px 80px;
-  background: #1e3a8a;
-  color: #fff;
+
+/* Institutions */
+.institutions {
+  padding: 4rem 1rem;
+  background: #fff;
 }
-.footer .links a {
-  display: block;
-  color: #fff;
+
+.institution-card {
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.institution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.rating-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #fff;
+  color: #1062FE;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA */
+.cta-section {
+  background: #1062FE;
+  color: white;
+  padding: 3rem 1rem;
+  border-radius: 16px;
+  text-align: center;
+  margin: 3rem auto;
+  max-width: 950px;
+}
+
+.cta-section h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.cta-section .btn {
+  background: #fff;
+  color: #1062FE;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  transition: 0.3s;
+}
+
+.cta-section .btn:hover {
+  background: #f0f0f0;
+}
+
+/* Footer */
+footer {
+  background: #0d47a1;
+  color: white;
+  padding: 3rem 1rem;
+}
+
+footer h5 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: #ffffffb3; /* blanco semi-transparente */
   text-decoration: none;
-  margin: 6px 0;
-  font-size: 0.9rem;
 }
-.footer .footer-right a {
-  margin: 0 8px;
+
+footer a:hover {
   color: #fff;
-  font-size: 1.2rem;
+}
+footer a i {
+  transition: color 0.3s, transform 0.2s;
+}
+
+footer a i:hover {
+  color: #00e5ff; /* Celeste cuando pasas encima */
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .cta-section {
+    margin: 2rem 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .institution-card img {
+    height: 160px;
+  }
 }
