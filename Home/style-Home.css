@@ -218,4 +218,27 @@ body { font-family: 'Inter', sans-serif; }
       border-radius: 8px; padding: 2px 8px;
       font-weight: 600; font-size: 0.85rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
+}
+/* FOOTER */
+.footer {
+  width: 100%;
+  max-width: 100%;  /* que abarque todo */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 40px 80px;
+  background: #1e3a8a;
+  color: #fff;
+}
+.footer .links a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 6px 0;
+  font-size: 0.9rem;
+}
+.footer .footer-right a {
+  margin: 0 8px;
+  color: #fff;
+  font-size: 1.2rem;
+}
