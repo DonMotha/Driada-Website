@@ -15,8 +15,6 @@ function Body() {
             <Instituciones/>
             <Apoyo/>
             <Footer/>
-            
-
         </div>
     )
 }
