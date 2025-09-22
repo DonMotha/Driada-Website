@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 
 
@@ -14,6 +14,7 @@ function Card() {
                     <p className="card-text">Formación técnica de alta calidad para el desarrollo
                     profesional.</p>
                     <p className="text-muted small mb-0">📍 Santiago, Chile</p>
+                    <Link to="/detalle/1" className="btn btn-outline-primary mt-2">Ver más</Link>
                 </div>
             </div>
         </div>
