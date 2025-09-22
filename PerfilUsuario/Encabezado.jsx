@@ -1,10 +1,12 @@
+import LogoUsuario from './images/LogoUsuario'
+
 function Encabezado() {
     return(
         <div className="text-center">
         {/* <!-- Encabezado --> */}
         <img
           className="foto-usuario"
-          src="images/LogoUsuario.svg"
+          src={LogoUsuario}
           alt="Imagen vacía de usuario invitado"
         />
         <h1 className="title">Usuario invitado</h1>
