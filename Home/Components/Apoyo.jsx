@@ -1,7 +1,7 @@
 
 
 
-function Cta() {
+function Apoyo() {
     return (
 
         <section class="cta-section py-5 text-center">
@@ -16,4 +16,4 @@ function Cta() {
     )
 }
 
-export default Cta
+export default Apoyo
