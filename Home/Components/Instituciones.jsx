@@ -22,14 +22,14 @@ function Instituciones() {
                                 <Card/>
                             </div>
                         </div>
-                        <div className="carousel-item active">
+                        <div className="carousel-item">
                             <div className="row gx-4">
                                 <Card/>
                                 <Card/>
                                 <Card/>
                             </div>
                         </div>
-                        <div className="carousel-item active">
+                        <div className="carousel-item">
                             <div className="row gx-4">
                                 <Card/>
                                 <Card/>

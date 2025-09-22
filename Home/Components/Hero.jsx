@@ -1,12 +1,11 @@
 
 
 
-
 function Hero() {
     return (
         <section className="hero text-center py-5 bg-light-blue">
         <div className="container">
-            <h1 className="fw-bold display-5">Encuentra la <spam className="text-primary">beca perfecta</spam><br/>para tu futuro
+            <h1 className="fw-bold display-5">Encuentra la <span className="text-primary">beca perfecta</span><br/>para tu futuro
             </h1>
             <p className="lead mt-3 mb-4 text-muted">Conectamos estudiantes talentososo con oportunidades educativas
                 excepcionales. Tu
