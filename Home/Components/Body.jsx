@@ -9,7 +9,7 @@ import Instituciones from "./Instituciones"
 
 function Body() {
     return(
-        <body class="bg-light">
+        <div className="bg-light">
             <Navbar/>
             <Hero/>
             <Instituciones/>
@@ -17,7 +17,7 @@ function Body() {
             <Footer/>
             
 
-        </body>
+        </div>
     )
 }
 
