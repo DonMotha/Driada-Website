@@ -1,0 +1,75 @@
+
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./login.css";
+
+function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    const handleSumit = async (e) => {
+        e.preventDefault();
+        // aqui se conecta el backend (API login)
+        console.log("Login con", email, password);
+
+        // Simulacion -> luego validar con token real
+        localStorage.setItem("token", "falso-jwt");
+        navigate("/"); // redirigirte al Home
+    };
+
+    return (
+        <div className="login-container">
+            {/* Logo */}
+            <div className="logo">
+                <img src="/images/logo.png" alt="Logo Quiero mi beca" width="100px" />
+                <h2 className="app-name">Quiero mi beca</h2>
+            </div>
+
+            <h1 className="title">Iniciar Sesión</h1>
+
+            <form className="login-form" onSubmit={handleSubmit}>
+                <input
+                    type="email"
+                    placeholder="Correo electrónico"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+                <input
+                    type="password"
+                    placeholder="Contraseña"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
+                <button type="submit" className="btn-primary">
+                    Iniciar Sesión
+                </button>
+                <button
+                    type="button"
+                    className="btn-secondary"
+                    onClick={() => navigate("/")}
+                >
+                    Entrar sin cuenta
+                </button>
+            </form>
+
+            <p className="divider">O continúa con</p>
+
+            {/* Redes sociales */}
+            <div className="social-login">
+                <button><img src="/images/icono-tele.svg" alt="Telegram" /></button>
+                <button><img src="/images/icono-fb.svg" alt="Facebook" /></button>
+                <button><img src="/images/icono-linke.svg" alt="LinkedIn" /></button>
+            </div>
+
+            {/* Registro */}
+            <p className="register-text">
+                ¿No tienes cuenta? <Link to="/register">Regístrate</Link>
+            </p>
+        </div>
+    );
+}
+
+export default Login;
