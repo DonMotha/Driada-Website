@@ -16,11 +16,13 @@
     ...DATA
   ];
 
-  // --- 2) Utilidades -----------------------------------------------------
+  // --- 2) Utilidades, e un atajo para seleccionar elementos del DOM, $ uno y $$varios-----------------------------------------------------
   const $  = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
   // Deduplicar por id y por nombre (case/trim insensitive)
+  //evita que se generen duplicados por id o por nombre, este ignora mayusculas y espacios
+  //si llegan dios aiep solo muestra 1 
   function dedupe(items){
     const seenId   = new Set();
     const seenName = new Set();
@@ -40,6 +42,8 @@
   }
 
   // Sanitiza string y escapa HTML
+  //el s: asegura el strinf y quita los espacios
+  //escapeHTML evita contenido con <>&""´ rompa el HTML 
   function s(v){ return (v ?? '').toString().trim(); }
   function escapeHTML(str=''){
     return String(str)
@@ -48,6 +52,7 @@
   }
 
   // Estrellas con media
+  //convierte un numero en iconos
   function stars(n=0){
     const full = Math.floor(n);
     const half = (n - full) >= 0.5 ? 1 : 0;
@@ -61,12 +66,13 @@
       </span>
     `;
   }
-
+  //evita dispara el filtro con cada letra, espera 150 ms desde la ultima pulsacion
   function debounce(fn, ms=150){
     let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms); };
   }
 
   // --- 3) Estado derivado de URL ----------------------------------------
+  //
   const params     = new URLSearchParams(location.search);
   const qParam     = s(params.get('q'));
   const instParam  = s(params.get('inst')).toLowerCase();
@@ -75,6 +81,9 @@
   const SOURCE = dedupe(RAW);
 
   // --- 4) Render ---------------------------------------------------------
+  //dibuja cada institucion con una tarjeta con nombre,tipo,estrellas, ubicacion y descripcion
+  //añade un click para navegar al perfil de la institucion
+  //muestra mendsaje cuando la busqueda no encuentra nada
   const ul    = $('#listado');
   const input = $('#q');
 
@@ -111,17 +120,29 @@
       `;
     }).join('');
 
-    // Navegación al detalle
+    // Navegación a los perfiles de las instuciones
+    // $$('.inst-card', ul).forEach(li=>{
+    //   li.addEventListener('click', ()=>{
+    //     const id = li.getAttribute('data-id');
+    //     window.location.href = `institucion.html`;
+    //   });
+    //   li.addEventListener('keydown', e=>{ if(e.key==='Enter') li.click(); });
+    // });
+    // Navegación a una vista fija
     $$('.inst-card', ul).forEach(li=>{
       li.addEventListener('click', ()=>{
-        const id = li.getAttribute('data-id');
-        window.location.href = `detalle.html?id=${encodeURIComponent(id)}`;
+        window.location.href = "../Kaly-Driada/institucion.html";
       });
-      li.addEventListener('keydown', e=>{ if(e.key==='Enter') li.click(); });
+      li.addEventListener('keydown', e=>{ if(e.key === 'Enter') li.click(); });
     });
+
+
   }
 
   // --- 5) Filtro ---------------------------------------------------------
+  //si llega ?inst, primero busca por id
+  //si hay texto input, filtra por nombre
+  //llama a render con el
   function filtrar(){
     const q = s(input?.value).toLowerCase();
 
