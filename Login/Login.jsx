@@ -8,7 +8,7 @@ function Login() {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    const handleSumit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         // aqui se conecta el backend (API login)
         console.log("Login con", email, password);
@@ -22,33 +22,33 @@ function Login() {
         <div className="login-container">
             {/* Logo */}
             <div className="logo">
-                <img src="/images/logo.png" alt="Logo Quiero mi beca" width="100px" />
+                <img src="/images/logo.png" alt="Logo Quiero mi beca" width={"100px"} />
                 <h2 className="app-name">Quiero mi beca</h2>
             </div>
 
             <h1 className="title">Iniciar Sesión</h1>
 
             <form className="login-form" onSubmit={handleSubmit}>
-                <input
+                <input className="d-flex flex-column align-items-center w-75 mx-auto"
                     type="email"
                     placeholder="Correo electrónico"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 />
-                <input
+                <input className="d-flex flex-column align-items-center w-75 mx-auto"
                     type="password"
                     placeholder="Contraseña"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
-                <button type="submit" className="btn-primary">
+                <button type="submit" className="btn-primary d-flex flex-column align-items-center w-50 mx-auto">
                     Iniciar Sesión
                 </button>
                 <button
                     type="button"
-                    className="btn-secondary"
+                    className="btn-secondary d-flex flex-column align-items-center w-50 mx-auto"
                     onClick={() => navigate("/")}
                 >
                     Entrar sin cuenta

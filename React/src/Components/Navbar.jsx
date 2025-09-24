@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Login from "../../../Login/Login";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -54,9 +55,9 @@ function Navbar() {
 
             {/* Iniciar sesión */}
             <li className="nav-item">
-              <a className="btn btn-primary text-white fw-semibold ms-3" href="#" onClick={(e)=>e.preventDefault()}>
-                Iniciar sesión
-              </a>
+              <Link to="/login" className="btn btn-primary text-white fw-semibold ms-3"  onClick={(e)=>e.preventDefault()}>
+                Iniciar sesión 
+              </Link>
             </li>
           </ul>
         </div>

@@ -9,6 +9,7 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Insti from "../../Instituciones/insti";
 import User from "../../PerfilUsuario/User";
+import Login from "../../Login/Login";
 
 
 
@@ -20,6 +21,7 @@ function App() {
     <Navbar/>
     <Routes>
     <Route path="/"element={<Home/>} />
+    <Route path="/login" element={<Login/>} />
     
     <Route path="/datalle/:id" element={<DetalleInstituto/>} />
     <Route path="/instituciones" element={<Insti/>}/>
