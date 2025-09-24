@@ -3,19 +3,17 @@ import Footer from "../React/src/Components/Footer"
 import Encabezado from "./Encabezado"
 import Numeros from "./Numeros"
 import Secciones from "./Secciones"
-
+import "./user-style.css"
 function User() {
     return(
         <body>
             <div className="container-fluid">
-                <Navbar/>
                 <Encabezado/>
                 <hr />
                 <Numeros/>
                 <hr />
                 <Secciones/>
                 <hr />
-                <Footer/>
             </div>
         </body>
     )
