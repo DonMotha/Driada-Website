@@ -1,7 +1,7 @@
-import bookmark from './images/bookmark'
-import Clock from './images/Clock'
-import Certificate from './images/Certificate'
-import Setting from './images/Setting'
+import bookmark from './images/bookmark.svg'
+import Clock from './images/Clock.svg'
+import Certificate from './images/Certificate.svg'
+import Setting from './images/Setting.svg'
 
 function Secciones() {
     return(
