@@ -4,7 +4,7 @@ function Footer() {
     return (
         
         <footer className="py-5 text-white" >
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
 
                     <div className="col-md-4 mb-3">
