@@ -1,0 +1,53 @@
+/* Tipografía global */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  padding: 0.8rem 1rem;
+  font-weight: 500;
+}
+
+.navbar .nav-link.active {
+  color: #1062FE !important;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #1062FE !important;
+}
+
+
+
+
+
+
+
+
+/* Footer */
+footer {
+  background: #0d47a1;
+  color: white;
+  padding: 3rem 1rem;
+}
+
+footer h5 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: #ffffffb3; /* blanco semi-transparente */
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fff;
+}
+footer a i {
+  transition: color 0.3s, transform 0.2s;
+}
