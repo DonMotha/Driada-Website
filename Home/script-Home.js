@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".card .item");
+    const cards = document.querySelectorAll(".card-item");
     const searchInput = document.querySelector(".search-container input");
     const searchButton = document.querySelector(".search-container button");
     const cardsContainer = document.querySelector(".cards-container .swiper");
@@ -19,19 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.forEach(card => {
         card.style.cursor = "pointer";
         card.addEventListener("click", () => {
-            const institutionName = card.querySelector("h3").innerText.trim();
+            const institutionName = card.querySelector(".card-title").innerText.trim();
             // Redirigir a la página de detalles con el nombre de la institución como parámetro
             window.location.href = `details.html?institution=${encodeURIComponent(institutionName)}`;
         });
     });
       // --- 3. Carrusel horizontal ---
-      new Swiper('.card-wrapper', {
+      new Swiper('.cards-container .swiper', {
         loop: true,
         spaceBetween: 30,
 
       // Pagination bullets
         pagination: {
           el: '.swiper-pagination',
+          clickable:  true,
         },
 
       // Navigation arrows
