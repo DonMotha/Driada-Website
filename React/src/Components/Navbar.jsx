@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 function Navbar() {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg bg-white shadow-sm ">
-      <div className="container">
+      <div className="container-fluid">
         <a className="navbar-brand fw-bold text-primary" href="#" onClick={(e)=>go(e,"/")}>
           Quiero mi beca
         </a>
@@ -53,11 +54,11 @@ function Navbar() {
             </li>
 
             {/* Iniciar sesión */}
-            <li className="nav-item">
-              <a className="btn btn-primary text-white fw-semibold ms-3" href="#" onClick={(e)=>e.preventDefault()}>
-                Iniciar sesión
-              </a>
-            </li>
+            {/*<li className="nav-item">
+              <Link to="/login" className="btn btn-primary text-white fw-semibold ms-3"  onClick={(e)=>e.preventDefault()}>
+                Iniciar sesión 
+              </Link>
+            </li>*/}
           </ul>
         </div>
       </div>
