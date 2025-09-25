@@ -10,6 +10,7 @@ import Navbar from "./Components/Navbar";
 import Insti from "../../Instituciones/insti";
 import User from "../../PerfilUsuario/User";
 import '../src/App.css';
+import BecasCarreras from "../../Carreras-Becas/Becas-C";
 
 
 function App() {
