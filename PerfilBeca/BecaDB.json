@@ -1,0 +1,21 @@
+{
+    "_id": {
+      "$oid": "68b75717aa6af0866f95d2ca"
+    },
+    "nombre": "Beca Bicentenario",
+    "institutionId": "Mineduc",
+    "areas": "Educación Superior",
+    "activa": true,
+    "tipo": "Beca",
+    "modalidad": "Presencial",
+    "requisitos": {
+      "RSH": 70,
+      "puntaje": 458
+    },
+    "duracion": "Carrera",
+    "fechas": {
+      "inicioPostulacion": null,
+      "finPostulacion": null
+    },
+    "link": ""
+}

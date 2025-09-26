@@ -11,6 +11,7 @@ import Insti from "../../Instituciones/insti";
 import User from "../../PerfilUsuario/User";
 import '../src/App.css';
 import BecasCarreras from "../../Carreras-Becas/Becas-C";
+import Beca from "../../PerfilBeca/Beca";
 import Carreras from "../../Carreras/Carreras";
 
 
@@ -19,23 +20,21 @@ function App() {
 
 
   return (
-      <>
-        <Navbar />
+    <>
+      <Navbar/>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/detalle/:id" element={<DetalleInstituto />} />
-          <Route path="/instituciones" element={<Insti />} />
-          
-        
+          <Route path="/"element={<Home/>} />
+          <Route path="/detalle/:id" element={<DetalleInstituto/>} />
+          <Route path="/instituciones" element={<Insti/>}/>
+          <Route path="/perfil" element = {<User/>}/>
+          <Route path="becasycarreras" element={<BecasCarreras/>}/>
+          <Route path="/beca" element={<Beca/>}/>
           <Route path="/carreras/:id" element={<Carreras />} />
-          <Route path="/perfil" element={<User />} />
-          <Route path="/becasycarreras" element={<BecasCarreras />} />
-
         </Routes>
+      <Footer />
+    </>
 
-        <Footer />
-
-      </>
+      
       );
 }
 

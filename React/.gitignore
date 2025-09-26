@@ -24,6 +24,9 @@ dist-ssr
 *.sln
 *.sw?
 
+# vite .json
+node_modules/.vite/deps/_metadata.json
+
 # Vite cache
 .vite
 node_modules/.vite
