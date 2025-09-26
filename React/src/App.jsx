@@ -12,8 +12,8 @@ import User from "../../PerfilUsuario/User";
 import '../src/App.css';
 import BecasCarreras from "../../Carreras-Becas/Becas-C";
 import Beca from "../../PerfilBeca/Beca";
+import PerfilInsti from "../../Kaly-Driada/Componentes/Hero";
 import Carreras from "../../Carreras/Carreras";
-
 
 
 function App() {
@@ -21,17 +21,21 @@ function App() {
 
   return (
     <>
-      <Navbar/>
-        <Routes>
-          <Route path="/"element={<Home/>} />
-          <Route path="/detalle/:id" element={<DetalleInstituto/>} />
-          <Route path="/instituciones" element={<Insti/>}/>
-          <Route path="/perfil" element = {<User/>}/>
-          <Route path="becasycarreras" element={<BecasCarreras/>}/>
-          <Route path="/beca" element={<Beca/>}/>
-          <Route path="/carreras/:id" element={<Carreras />} />
-        </Routes>
-      <Footer />
+    <Navbar/>
+    <Routes>
+    <Route path="/"element={<Home/>} />
+    <Route path="/detalle/:id" element={<DetalleInstituto/>} />
+    <Route path="/instituciones" element={<Insti/>}/>
+    <Route path="/perfil" element = {<User/>}/>
+    <Route path="/becasycarreras" element={<BecasCarreras/>}/>
+    <Route path="/perfil-beca" element={<Beca/>}/>
+    <Route path="/perfil-insti" element={<PerfilInsti/>}/>
+    <Route path="/carreras/:id" element={<Carreras />} />
+
+    </Routes>
+
+    <Footer/>
+  
     </>
 
       
