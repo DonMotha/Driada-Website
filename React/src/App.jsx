@@ -11,6 +11,7 @@ import Insti from "../../Instituciones/insti";
 import User from "../../PerfilUsuario/User";
 import '../src/App.css';
 import BecasCarreras from "../../Carreras-Becas/Becas-C";
+import Carreras from "../../Carreras/Carreras";
 
 
 function App() {
@@ -23,8 +24,10 @@ function App() {
     <Route path="/"element={<Home/>} />
     <Route path="/detalle/:id" element={<DetalleInstituto/>} />
     <Route path="/instituciones" element={<Insti/>}/>
+    
     <Route path="/perfil" element = {<User/>}/>
-    <Route path="becasycarreras" element={<BecasCarreras/>}/>
+    <Route path="/becasycarreras" element={<BecasCarreras/>}/>
+    <Route path="/carreras" element={<Carreras/>}/>
     </Routes>
 
     <Footer/>
