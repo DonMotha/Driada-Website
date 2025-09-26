@@ -14,28 +14,31 @@ import BecasCarreras from "../../Carreras-Becas/Becas-C";
 import Carreras from "../../Carreras/Carreras";
 
 
+
 function App() {
-  
+
 
   return (
-    <>
-    <Navbar/>
-    <Routes>
-    <Route path="/"element={<Home/>} />
-    <Route path="/detalle/:id" element={<DetalleInstituto/>} />
-    <Route path="/instituciones" element={<Insti/>}/>
-    
-    <Route path="/perfil" element = {<User/>}/>
-    <Route path="/becasycarreras" element={<BecasCarreras/>}/>
-    <Route path="/carreras" element={<Carreras/>}/>
-    </Routes>
+      <>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/detalle/:id" element={<DetalleInstituto />} />
+          <Route path="/instituciones" element={<Insti />} />
+          
+        
+          <Route path="/carreras/:id" element={<Carreras />} />
+          <Route path="/perfil" element={<User />} />
+          <Route path="/becasycarreras" element={<BecasCarreras />} />
 
-    <Footer/>
-  
-    </>
-  );
+        </Routes>
+
+        <Footer />
+
+      </>
+      );
 }
 
-export default App
+ export default App
 
 

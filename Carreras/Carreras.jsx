@@ -1,34 +1,47 @@
-import './App.css';
+import { useParams } from "react-router-dom";
+import { CARRERAS } from "../Carreras/CarrerasA";
+import '../Carreras/Carreras.css';
+
 function Carreras() {
-   
+  const { id } = useParams(); // obtiene el id desde la URL
+  const carrera = CARRERAS.find((c) => c.id === id);
 
-    return (
-          <div className="container">
+  if (!carrera) return <p className="text-center">Carrera no encontrada</p>;
 
-    <div className="image-placeholder">
-      <img src="images/Cosmetologia.png" alt="Cosmetología" className="img-fluid" style ={{borderRadius:"8px;"}}/>
+  return (
+    <div className="container">
+      <div className="image-placeholder">
+        <img
+          src={carrera.img}
+          alt={carrera.nombre}
+          className="img-fluid"
+          style={{ borderRadius: "8px" }}
+        />
+      </div>
+
+      <div className="subtitle">{carrera.tipo}</div>
+      <h1>{carrera.nombre}</h1>
+
+      <div className="tags">
+        {carrera.tags.map((t, idx) => (
+          <div key={idx} className="tag">
+            {t}
+          </div>
+        ))}
+      </div>
+
+      <div className="rating">
+        ✩ <span>{carrera.rating}</span> ({carrera.votos}% votos)
+      </div>
+
+      <div className="section-title">Qué te puede atraer de esta Carrera</div>
+      <p>{carrera.descripcion}</p>
+
+      <a href="#" className="button">
+        Ver Malla
+      </a>
     </div>
+  );
+}
 
-    <div className="subtitle">Carrera Técnica</div>
-    <h1>Cosmetología</h1>
-
-    <div className="tags">
-      <div className="tag">Técnico</div>
-      <div className="tag">Belleza</div>
-    </div>
-
-    <div className="rating">
-      ✩ <span>4.9</span> (98% votos)
-    </div>
-
-    <div className="section-title">Qué te puede atraer de esta Carrera</div>
-    <p>
-       Al estudiar cosmetología, obtendrás el conocimiento teórico y práctico para llevar a cabo procedimientos destinados a la mantención, revitalización y rejuvenecimiento de la piel, así como otros procedimientos relacionados con la estética integral.
-    </p>
-
-    <a href="#" className="button">Ver Malla</a>
-  </div>
-     )
-   }
-
-export default Carreras
+export default Carreras;

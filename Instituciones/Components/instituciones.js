@@ -8,5 +8,10 @@ export const INSTITUCIONES = [
   {id:"4", nombre:"Miniduc", tipo:"Estatal",rating:4.7,ciudad:"Todas",
     desc:"El Ministerio de Educación de Chile es el órgano rector del Estado encargado de fomentar el desarrollo de la educación en todos sus niveles, a través de una educación humanista democrática, de excelencia y abierta al mundo en todos los niveles de enseñanza",
     img:"/imagenes/logo.png"
+  },
+  {
+    id: "5", nombre:"Miniduc", tipo:"Estatal",rating:4.7,ciudad:"Todas",
+    desc:"El Ministerio de Educación de Chile es el órgano rector del Estado encargado de fomentar el desarrollo de la educación en todos sus niveles, a través de una educación humanista democrática, de excelencia y abierta al mundo en todos los niveles de enseñanza",
+    img:"/imagenes/logo.png"
   }
 ];
