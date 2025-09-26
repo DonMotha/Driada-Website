@@ -11,6 +11,7 @@ import Insti from "../../Instituciones/insti";
 import User from "../../PerfilUsuario/User";
 import '../src/App.css';
 import BecasCarreras from "../../Carreras-Becas/Becas-C";
+import PerfilInsti from "../../Kaly-Driada/Componentes/Hero";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     <Route path="/instituciones" element={<Insti/>}/>
     <Route path="/perfil" element = {<User/>}/>
     <Route path="becasycarreras" element={<BecasCarreras/>}/>
+    <Route path="/PerfilInstitucion" element={<PerfilInsti/>}/>
     </Routes>
 
     <Footer/>
