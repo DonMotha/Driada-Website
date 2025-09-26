@@ -26,7 +26,10 @@ function App() {
     <Route path="/detalle/:id" element={<DetalleInstituto/>} />
     <Route path="/instituciones" element={<Insti/>}/>
     <Route path="/perfil" element = {<User/>}/>
-    <Route path="becasycarreras" element={<BecasCarreras/>}/>
+    <Route path="/becasycarreras" element={<BecasCarreras/>}/>
+    <Route path="/perfil-beca" element={<Beca/>}/>
+    <Route path="/perfil-insti" element={<PerfilInsti/>}/>
+
     </Routes>
 
     <Footer/>
