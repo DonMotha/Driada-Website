@@ -32,7 +32,7 @@ function Navbar() {
             {/* Instituciones */}
             <li className="nav-item">
               <a
-                className="nav-link"        /* ← quitamos la 's' suelta */
+                className="nav-link"      
                 href="/instituciones"
                 onClick={(e) => go(e, "/instituciones")}
               >
@@ -40,10 +40,14 @@ function Navbar() {
               </a>
             </li>
 
-            {/* Buscar (déjalo en # hasta que tengas ruta) */}
+             {/*Becas y carreras */}
             <li className="nav-item">
-              <a className="nav-link" href="#" onClick={(e)=>e.preventDefault()}>
-                Buscar
+              <a
+                className="nav-link"        
+                href="/becasycarreras"
+                onClick={(e) => go(e, "/becasycarreras")}
+              >
+                Becas/Carreras
               </a>
             </li>
 
