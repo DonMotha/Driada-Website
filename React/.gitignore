@@ -26,3 +26,4 @@ dist-ssr
 
 # Vite cache
 .vite
+node_modules/.vite
