@@ -55,7 +55,7 @@ function Beca() {
                     <div className="tags">
                         <div className="tag"> {beca.areas || "Área no especificada"} </div>
                         <div className="tag"> RSH: {beca.requisitos?.RSH}% </div>
-                        <div className="tag"> {beca.requisitos?.puntaje} </div>
+                        <div className="tag"> PAES: {beca.requisitos?.puntaje} </div>
                     </div>
                 </div>
             </div>
