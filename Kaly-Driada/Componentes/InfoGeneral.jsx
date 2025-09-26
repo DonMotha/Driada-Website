@@ -6,6 +6,9 @@ function InfoGeneral() {
 
         <div class="card-body insti">
             <h3 class="card-title">Generation</h3>
+             <span class="">
+                        Calificación ⭐1.0</span>
+            <div class="row vaciafavos"></div>
             <span class="badge rounded-pill text-bg-primary">Tecnología</span>
             <span class="badge rounded-pill text-bg-primary">Empleabilidad</span>
             <span class="badge rounded-pill text-bg-primary">Marketing</span>

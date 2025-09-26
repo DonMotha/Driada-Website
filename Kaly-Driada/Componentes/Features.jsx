@@ -5,10 +5,6 @@ function Features() {
     return (
 
         <div class="col-md-2 instifeat align-middle align-baseline">
-            <div class="row vaciacali"></div>
-            <span class="badge caliinst rounded-pill text-bg-warning">Califica</span> <span
-                class="rating-badge">⭐
-                1.0</span>
             <div class="row vaciafavos">
             </div>
             <div>
