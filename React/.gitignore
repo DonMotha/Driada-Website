@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# vite .json
+node_modules/.vite/deps/_metadata.json
