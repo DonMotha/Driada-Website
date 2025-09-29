@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-
+import logo from "../../public/apple-touch-icon.png";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -11,7 +11,8 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-white shadow-sm ">
       <div className="container-fluid">
-        <a className="navbar-brand fw-bold text-primary" href="#" onClick={(e)=>go(e,"/")}>
+        <a className="navbar-brand fw-bold text-primary d-flex align-items-cente" href="#" onClick={(e)=>go(e,"/")}>
+          <img src={logo} alt="Logo" width="40" height="40" className="me-2" />
           Quiero mi beca
         </a>
 

@@ -13,10 +13,11 @@ import '../src/App.css';
 import BecasCarreras from "../../Carreras-Becas/Becas-C";
 import Beca from "../../PerfilBeca/Beca";
 import PerfilInsti from "../../Kaly-Driada/Componentes/Hero";
+import Carreras from "../../Carreras/Carreras";
 
 
 function App() {
-  
+
 
   return (
     <>
@@ -29,13 +30,16 @@ function App() {
     <Route path="/becasycarreras" element={<BecasCarreras/>}/>
     <Route path="/perfil-beca" element={<Beca/>}/>
     <Route path="/perfil-insti" element={<PerfilInsti/>}/>
+    <Route path="/carreras/:id" element={<Carreras />} />
 
     </Routes>
 
     <Footer/>
   
     </>
-  );
+
+      
+      );
 }
 
 export default App
