@@ -33,7 +33,7 @@ function Instituciones() {
                                 className={`carousel-item ${index === 0 ? "active" : ""}`}
                                 key={index}
                             >
-                                <div className="row gx-4">
+                                <div className="row row-cols-2 row-cols-md-3 gx-4 gy-4">
                                     {grupo.map((inst) => (
                                         <Card key={inst.id} item={inst} />
                                     ))}

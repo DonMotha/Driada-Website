@@ -9,7 +9,7 @@ function Carreras() {
   if (!carrera) return <p className="text-center">Carrera no encontrada</p>;
 
   return (
-    <div className="container">
+    <div className="carreras-container">
       <div className="image-placeholder">
         <img
           src={carrera.img}
