@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../public/apple-touch-icon.png";
 
+
 function Navbar() {
   const navigate = useNavigate();
   const go = (e, to) => {
