@@ -21,6 +21,9 @@ import BecasCarreras from "../../Carreras-Becas/Becas-C";
 import Beca from "../../PerfilBeca/Beca";
 import PerfilInsti from "../../Kaly-Driada/Componentes/Hero";
 import Hero from "../../Kaly-Driada/Componentes/Hero";
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 
@@ -33,6 +36,7 @@ function App() {
     <Routes>
     <Route path="/"element={<Home/>} />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     
     
     <Route path="/datalle/:id" element={<DetalleInstituto/>} />
@@ -40,6 +44,8 @@ function App() {
     <Route path="/perfil" element = {<User/>}/>
     <Route path="becasycarreras" element={<BecasCarreras/>}/>
 =======
+=======
+>>>>>>> Stashed changes
     <Route path="/detalle/:id" element={<Hero/>} />
     <Route path="/instituciones" element={<Insti/>}/>
     <Route path="/perfil" element = {<User/>}/>
