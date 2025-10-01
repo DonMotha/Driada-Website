@@ -3,7 +3,7 @@ import BecasRating from "./Becas-RatingBadge";
 
 export default function BecasCard({ item }) {
   const navigate = useNavigate();
-  const go = () => navigate(`/detalle/${encodeURIComponent(item.id)}`); // ojo: detalle
+  const go = () => navigate(`/perfil-beca/${encodeURIComponent(item.id)}`); // ojo: detalle
 
   return (
     <div className="Becas-card card border-0 shadow-sm h-100" role="button" onClick={go}>
