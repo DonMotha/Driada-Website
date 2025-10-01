@@ -7,7 +7,7 @@ import RatingBadge from "./RatingBadge";
 function Card({item}) {
     if (!item) return null; // 👈 evita render si no hay props
     return (
-        <div className="col-md-4">
+        <div className="col-6 col-md-4">
             <div className="card institution-card h-100" data-url="detalle.html?id=1">
                 <img
                     src={item.img}
