@@ -14,6 +14,8 @@ import BecasCarreras from "../../Carreras-Becas/Becas-C";
 import Beca from "../../PerfilBeca/Beca";
 import PerfilInsti from "../../Kaly-Driada/Componentes/Hero";
 import Carreras from "../../Carreras/Carreras";
+import Hero from "../../Kaly-Driada/Componentes/Hero";
+
 
 
 function App() {
@@ -24,13 +26,14 @@ function App() {
     <Navbar/>
     <Routes>
     <Route path="/"element={<Home/>} />
-    <Route path="/detalle/:id" element={<DetalleInstituto/>} />
+    <Route path="/detalle/:id" element={<Hero/>} /> {/*DetalleInstituto*/}
     <Route path="/instituciones" element={<Insti/>}/>
     <Route path="/perfil" element = {<User/>}/>
     <Route path="/becasycarreras" element={<BecasCarreras/>}/>
-    <Route path="/perfil-beca" element={<Beca/>}/>
+    <Route path="/perfil-beca/:id" element={<Beca/>}/>
     <Route path="/perfil-insti" element={<PerfilInsti/>}/>
     <Route path="/carreras/:id" element={<Carreras />} />
+    
 
     </Routes>
 

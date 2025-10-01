@@ -1,5 +1,5 @@
 /* Navbar */
-.navbar {
+/*.navbar {
   padding: 0.8rem 1rem;
   font-weight: 500;
 }
@@ -11,7 +11,7 @@
 .navbar-brand {
   font-weight: 700;
   color: #1062fe !important;
-}
+}*/
 
 .container-fluid {
   max-width: 1000px;
@@ -97,7 +97,7 @@ p {
 }
 
 /* Footer */
-footer {
+/*footer {
   background: #0d47a1;
   color: white;
   padding: 3rem 1rem;
@@ -111,7 +111,7 @@ footer h5 {
 
 footer a {
   color: #ffffffb3; /* blanco semi-transparente */
-  text-decoration: none;
+  /*text-decoration: none;
 }
 
 footer a:hover {
@@ -119,4 +119,4 @@ footer a:hover {
 }
 footer a i {
   transition: color 0.3s, transform 0.2s;
-}
+}*/

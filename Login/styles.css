@@ -1,18 +1,18 @@
 /* styles.css */
 /* Reset basico */
-* {               /* Selecciona todos los elementos */          
-    margin: 0;    /* Elimina margenes por defecto */
-    padding: 0;   /* Elimina relleno por defecto */
-    box-sizing: border-box;/* Incluye el padding y border en el tamaño total del elemento */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;/* Fuente por defecto */
-}
-body {                      /* Estilos para el cuerpo del documento */
-  background-color: #fff;/* Color de fondo blanco */
-  display: flex;           /* Usar flexbox para centrar contenido */
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center;     /* Centrar verticalmente */
-  height: 100vh;           /* Altura completa de la ventana */
-}
+/* {               /* Selecciona todos los elementos */          
+   /* margin: 0;    /* Elimina margenes por defecto */
+   /* padding: 0;   /* Elimina relleno por defecto */
+   /* box-sizing: border-box;/* Incluye el padding y border en el tamaño total del elemento */
+   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;/* Fuente por defecto */
+/*}*/
+/*body {                      /* Estilos para el cuerpo del documento */
+  /*background-color: #fff;/* Color de fondo blanco */
+  /*display: flex;           /* Usar flexbox para centrar contenido */
+  /*justify-content: center; /* Centrar horizontalmente */
+ /* align-items: center;     /* Centrar verticalmente */
+  /* height: 100vh;           /* Altura completa de la ventana */
+/*}*/
 
 .login-container {                     /* Contenedor del formulario de login */
   background-color: #f9f9f9;         /* Color de fondo claro */
