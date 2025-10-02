@@ -3,9 +3,9 @@
 
 function BtnMasCursos() {
     return(
-        
-         <div class="row justify-content-center">
-                <button type="button" class="btn mascursosinsti btn-primary btn-md">Ver
+
+            <div className="row justify-content-center">
+                <button type="button" className="btn perfilinsti-btn-cursos btn-primary btn-md">Ver
                     más cursos</button>
             </div>
     )

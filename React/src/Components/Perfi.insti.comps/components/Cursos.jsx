@@ -5,12 +5,12 @@ import CardCurso from "./CardCurso"
 function Cursos() {
     return (
         <>
-        <div class="row cardcursos justify-content-center"></div>
-       < CardCurso />
-       < CardCurso />
-       < CardCurso />
-       < CardCurso />
-       </>
+            <div className="row perfilinsti-cursos-row justify-content-center"></div>
+            <CardCurso />
+            <CardCurso />
+            <CardCurso />
+            <CardCurso />
+        </>
     )
 }
 

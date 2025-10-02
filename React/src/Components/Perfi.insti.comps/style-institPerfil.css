@@ -1,0 +1,55 @@
+/* Contenedor principal */
+.perfilinsti-container {
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+/* Conteiner alterno (como el .kaly de antes) */
+.perfilinsti-kaly {
+    margin: 1% auto;
+}
+
+/* Tarjetas de cursos */
+.perfilinsti-curso {
+    width: 14rem;
+    margin: 0 1% 2% 1%;
+}
+
+/* Fila de cursos */
+.perfilinsti-cursos-row {
+    margin: 0 5% 5% 5%;
+    text-align: center;
+}
+
+/* Features */
+.perfilinsti-features {
+    margin-right: 1%;
+}
+
+.perfilinsti-favos {
+    margin-top: 2%;
+}
+
+.perfilinsti-moreinfo {
+    margin-top: 2%;
+}
+
+/* Botón “Más cursos” */
+.perfilinsti-btn-cursos {
+    margin: 5% auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Caja de título */
+.perfilinsti-titlebox {
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Badges */
+.perfilinsti-rating {
+    margin-top: 20px;
+}

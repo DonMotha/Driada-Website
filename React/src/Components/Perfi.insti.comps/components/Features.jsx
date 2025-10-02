@@ -4,14 +4,14 @@
 function Features() {
     return (
 
-        <div class="col-md-2 instifeat align-middle align-baseline">
-            <div class="row vaciafavos">
+        <div className="col-md-2 align-middle align-baseline perfilinsti-features">
+            <div className="row ">
             </div>
             <div>
-                <button type="button" class="btn favos btn-success btn-sm">Agregar a favoritos</button>
+                <button type="button" className="btn btn-success btn-sm perfilinsti-favos">Agregar a favoritos</button>
             </div>
-            <div class="row vaciafavos"></div>
-            <button type="button" class="btn masinfoinst btn-outline-info">Más información de la institución.
+            <div className="row "></div>
+            <button type="button" className="btn btn-outline-info perfilinsti-moreinfo">Más información de la institución.
                 Pincha aquí.
             </button>
         </div>
