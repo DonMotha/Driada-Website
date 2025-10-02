@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../../../../Login/login.css";
+import "../../../src/Components/Login.comps/login.css";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -21,12 +21,12 @@ function Login() {
     return (
         <div className="login-container">
             {/* Logo */}
-            <div className="logo">
+            <div className="login-logo">
                 <img src="/images/logo.png" alt="Logo Quiero mi beca" width={"100px"} />
-                <h2 className="app-name">Quiero mi beca</h2>
+                <h2 className="login-appname">Quiero mi beca</h2>
             </div>
 
-            <h1 className="title">Iniciar Sesión</h1>
+            <h1 className="login-title">Iniciar Sesión</h1>
 
             <form className="login-form" onSubmit={handleSubmit}>
                 <input className="d-flex flex-column align-items-center w-75 mx-auto"
@@ -55,17 +55,17 @@ function Login() {
                 </button>
             </form>
 
-            <p className="divider">O continúa con</p>
+            <p className="login-divider">O continúa con</p>
 
             {/* Redes sociales */}
-            <div className="social-login">
+            <div className="login-social">
                 <button><img src="/images/icono-tele.svg" alt="Telegram" /></button>
                 <button><img src="/images/icono-fb.svg" alt="Facebook" /></button>
                 <button><img src="/images/icono-linke.svg" alt="LinkedIn" /></button>
             </div>
 
             {/* Registro */}
-            <p className="register-text">
+            <p className="login-register-text">
                 ¿No tienes cuenta? <Link to="/register">Regístrate</Link>
             </p>
         </div>

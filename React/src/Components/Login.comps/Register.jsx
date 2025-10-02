@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "../../../../Login/login.css";
+import "../../../src/Components/Login.comps/login.css";
 
 function Register() {
     const [form, setForm] = useState({ nombre: "", email: "", password: "" });
@@ -18,12 +18,12 @@ function Register() {
 
     return (
         <div className="login-container">
-            <div className="logo">
+            <div className="login-logo">
                 <img src="/images/logo.png" alt="Logo Quiero mi beca" width="100px" />
-                <h2 className="app-name">Quiero mi beca</h2>
+                <h2 className="login-appname">Quiero mi beca</h2>
             </div>
 
-            <h1 className="title">Crear cuenta</h1>
+            <h1 className="login-title">Crear cuenta</h1>
 
             <form className="login-form" onSubmit={handleSubmit}>
                 <input
@@ -50,12 +50,12 @@ function Register() {
                     onChange={handleChange}
                     required
                 />
-                <button type="submit" className="btn-primary">
+                <button type="submit" className="login-btn-primary">
                     Registrarse
                 </button>
             </form>
 
-            <p className="register-text">
+            <p className="login-register-text">
                 ¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link>
             </p>
         </div>
