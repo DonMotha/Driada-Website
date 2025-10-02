@@ -28,6 +28,6 @@ dist-ssr
 node_modules/
 node_modules/.vite/deps/_metadata.json
 
-/.vscode
+vscode
 
 

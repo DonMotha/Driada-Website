@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../../public/apple-touch-icon.png";
+import logo from "../../../src/assets/logo.png";
 import '../../../src/Components/Nav.comps/Nav.css'
 
 function Navbar() {

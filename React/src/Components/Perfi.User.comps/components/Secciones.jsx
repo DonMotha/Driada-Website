@@ -1,7 +1,7 @@
-import bookmark from '../../../../public/bookmark.svg'
-import Clock from '../../../../public/Clock.svg'
-import Certificate from '../../../../public/Certificate.svg'
-import Setting from '../../../../public/Setting.svg'
+import bookmark from '../../../../src/assets/bookmark.svg'
+import Clock from '../../../../src/assets/Clock.svg'
+import Certificate from '../../../../src/assets/Certificate.svg'
+import Setting from '../../../../src/assets/Setting.svg'
 
 function Secciones() {
     return(

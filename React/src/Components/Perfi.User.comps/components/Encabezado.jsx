@@ -1,4 +1,4 @@
-import LogoUsuario from '../../../../public/LogoUsuario.svg'
+import LogoUsuario from '../../../../src/assets/LogoUsuario.svg'
 
 function Encabezado() {
     return(

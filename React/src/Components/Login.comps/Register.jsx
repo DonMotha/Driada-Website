@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../../src/Components/Login.comps/login.css";
+import logo from "../../../src/assets/logo.png";
 
 function Register() {
     const [form, setForm] = useState({ nombre: "", email: "", password: "" });
@@ -19,7 +20,7 @@ function Register() {
     return (
         <div className="login-container">
             <div className="login-logo">
-                <img src="/images/logo.png" alt="Logo Quiero mi beca" width="100px" />
+                <img src={logo} alt="Logo Quiero mi beca" width="100px" />
                 <h2 className="login-appname">Quiero mi beca</h2>
             </div>
 

@@ -2,6 +2,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../../src/Components/Login.comps/login.css";
+import logo from "../../../src/assets/logo.png";
+import tele from "../../../src/assets/icono-tele.svg";
+import fb from "../../../src/assets/icono-fb.svg";
+import linke from "../../../src/assets/icono-linke.svg";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -22,7 +26,7 @@ function Login() {
         <div className="login-container">
             {/* Logo */}
             <div className="login-logo">
-                <img src="/images/logo.png" alt="Logo Quiero mi beca" width={"100px"} />
+                <img src={logo} alt="Logo Quiero mi beca" width={"100px"} />
                 <h2 className="login-appname">Quiero mi beca</h2>
             </div>
 
@@ -59,9 +63,9 @@ function Login() {
 
             {/* Redes sociales */}
             <div className="login-social">
-                <button><img src="/images/icono-tele.svg" alt="Telegram" /></button>
-                <button><img src="/images/icono-fb.svg" alt="Facebook" /></button>
-                <button><img src="/images/icono-linke.svg" alt="LinkedIn" /></button>
+                <button><img src={tele} alt="Telegram" /></button>
+                <button><img src={fb} alt="Facebook" /></button>
+                <button><img src={linke} alt="LinkedIn" /></button>
             </div>
 
             {/* Registro */}

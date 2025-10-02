@@ -5,7 +5,7 @@ import Features from "./components/Features";
 import InfoGeneral from "./components/InfoGeneral";
 import Header from "./components/Header"
 import '../../../src/Components/Perfi.insti.comps/style-institPerfil.css';
-import LogGene from '../../../public/LogGene.svg'
+import LogGene from '../../../src/assets/LogGene.svg'
 
 
 function Hero() {
