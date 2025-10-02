@@ -2,7 +2,7 @@
 
 
 import Card from "./Cards";
-import { INSTITUCIONES } from "../../../../../Instituciones/Components/instituciones";
+import { INSTITUCIONES } from "../../Insti.comps/components/instituciones";
 
 function chunkArray(array, size) {
     const result = [];
