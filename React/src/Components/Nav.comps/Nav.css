@@ -1,0 +1,14 @@
+/* Navbar */
+.navbar {
+    padding: 0.8rem 1rem;
+    font-weight: 500;
+}
+
+.navbar .nav-link.active {
+    color: #1062FE !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #1062FE !important;
+}

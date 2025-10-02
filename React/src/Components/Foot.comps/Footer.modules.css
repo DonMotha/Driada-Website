@@ -1,0 +1,31 @@
+/* Footer */
+footer {
+    background: #0d47a1;
+    color: white;
+    padding: 3rem 1rem;
+}
+
+footer h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: #ffffffb3;
+    /* blanco semi-transparente */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer a i {
+    transition: color 0.3s, transform 0.2s;
+}
+
+footer a i:hover {
+    color: #00e5ff;
+    /* Celeste cuando pasas encima */
+    transform: scale(1.2);
+}
