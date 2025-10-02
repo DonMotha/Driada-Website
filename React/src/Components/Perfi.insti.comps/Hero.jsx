@@ -5,6 +5,7 @@ import Features from "./components/Features";
 import InfoGeneral from "./components/InfoGeneral";
 import Header from "./components/Header"
 import '../../../../Kaly-Driada/style-institPerfil.css';
+import LogGene from '../../../public/LogGene.svg'
 
 
 function Hero() {
@@ -15,7 +16,7 @@ function Hero() {
             <div class="card mb-4 w-100">
                 <div class="row w-auto p-3">
                     <div class="image-placeholder col-md-3">
-                        <img src="\Images\Generation_Chile_logo_BLUE_v2.svg" class="img-fluid rounded-start" alt="" />
+                        <img src={LogGene} class="img-fluid rounded-start" alt="" />
                     </div>
                     <div class="col-md-6">
                         <InfoGeneral />

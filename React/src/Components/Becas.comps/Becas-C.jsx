@@ -4,7 +4,7 @@ import BecasSearchBar from "./Components/Becas-SearchBar";
 import BecasHeader from "./Components/Becas-Header";
 import BecasGrid from "./components/Becas-Grid";
 import { BECAS } from "./components/BecasCarreras"; // Asegúrate de tener los datos de Becas y Carreras importados
-import "../../../../Home/stylehome.css";
+
 import "../../../../Instituciones/insti.css";
 
 export default function BecasCarreras() {

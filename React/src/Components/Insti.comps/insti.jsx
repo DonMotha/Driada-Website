@@ -4,7 +4,7 @@ import SectionHeader from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import InstitutionsGrid from "./components/InstiGrid";
 import { INSTITUCIONES } from "./components/instituciones";
-import "../../../../Home/stylehome.css";
+import "../../../src/Components/Home.comps/stylehome.css";
 import "../../../../Instituciones/insti.css"; 
 
 export default function Insti() {

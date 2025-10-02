@@ -2,7 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from './Components/Home.comps/Home'
 
-import '../../Home/stylehome.css'
+import '../src/Components/Home.comps/stylehome.css'
 import "./Components/Nav.comps/Navbar";
 import "./Components/Foot.comps/Footer";
 import Footer from "./Components/Foot.comps/Footer";
