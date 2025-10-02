@@ -24,15 +24,4 @@
 
 .insti-page .rating i { color:#f4b400; } /* estrellas */
 /* Ajustes mínimos para que encaje con el estilo del Home */
-.institution-card .card-title {
-  line-height: 1.2;
-}
 
-.institution-card .card-text {
-  color: #222;
-}
-
-.institution-card .card-img-top {
-  border-top-left-radius: .5rem;
-  border-top-right-radius: .5rem;
-}

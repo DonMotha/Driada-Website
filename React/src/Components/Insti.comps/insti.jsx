@@ -4,8 +4,8 @@ import SectionHeader from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import InstitutionsGrid from "./components/InstiGrid";
 import { INSTITUCIONES } from "./components/instituciones";
-import "../../../src/Components/Home.comps/stylehome.css";
-import "../../../../Instituciones/insti.css"; 
+
+import "../../../src/Components/Insti.comps/insti.css"; 
 
 export default function Insti() {
   const [params, setParams] = useSearchParams();
@@ -27,7 +27,7 @@ export default function Insti() {
   };
 
   return (
-    <section className="institutions py-5 bg-white">
+    <section className="insti-page institutions py-5 bg-white">
       <div className="container">
         <SectionHeader
           title="Instituciones y fundaciones destacadas"
