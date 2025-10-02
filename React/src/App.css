@@ -1,14 +1,7 @@
-
-.navbar {
-  padding: 0.8rem 1rem;
-  font-weight: 500;
-}
-
-.navbar .nav-link.active {
-  color: #1062FE !important;
-}
-
-.navbar-brand {
-  font-weight: 700;
-  color: #1062FE !important;
+/* Tipografía global */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+  color: #333;
 }

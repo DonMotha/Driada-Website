@@ -3,10 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import Home from './Components/Home.comps/Home'
 
 import '../../Home/stylehome.css'
-import "./Components/Navbar";
-import "./Components/Footer";
-import Footer from "./Components/Footer";
-import Navbar from "./Components/Navbar";
+import "./Components/Nav.comps/Navbar";
+import "./Components/Foot.comps/Footer";
+import Footer from "./Components/Foot.comps/Footer";
+import Navbar from "./Components/Nav.comps/Navbar";
 import Insti from "../src/Components/Insti.comps/insti";
 import User from "./Components/Perfi.User.comps/User";
 import '../src/App.css';
