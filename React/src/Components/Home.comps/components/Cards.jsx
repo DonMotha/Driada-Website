@@ -11,7 +11,7 @@ function Card({item}) {
             <div className="card institution-card h-100" data-url="detalle.html?id=1">
                 <img
                     src={item.img}
-                    className="card-img-top"
+                    className="institution-card-img-top"
                     alt={item.nombre}
                     onError={(e) => { e.currentTarget.src = "/imagenes/default.png"; }} // backup
                 />

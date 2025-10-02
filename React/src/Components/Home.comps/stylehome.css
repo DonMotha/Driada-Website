@@ -18,18 +18,18 @@
 }
 
 /* Buscador */
-#searchInput {
+#home-searchInput {
   height: 48px;
   font-size: 1rem;
 }
 
-#searchButton {
+#home-searchButton {
   height: 48px;
   font-size: 1rem;
   font-weight: 600;
 }
 
-#searchButton.btn-primary {
+#home-searchButton.btn-primary {
   background: #1062FE;
   border: none;
 }
@@ -54,7 +54,7 @@
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
-.card img {
+.institution-card img {
   height: 200px;
   object-fit: cover;
   border-radius: 12px 12px 0 0;

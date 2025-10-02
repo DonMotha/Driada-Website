@@ -1,7 +1,7 @@
 
 import Body from "./components/Body"
 
-import '../../../../Home/stylehome.css' 
+import '../../../src/Components/Home.comps/stylehome.css' 
 
 
 function Home() {

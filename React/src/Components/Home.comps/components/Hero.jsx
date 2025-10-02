@@ -17,11 +17,11 @@ function Hero() {
                     sueño academico esta a un clic de distancia.</p>
 
                 <div className="d-flex flex-column align-items-center w-50 mx-auto">
-                    <input type="text" id="searchInput" value={query}
+                    <input type="text" id="home-searchInput" value={query}
                         onChange={(e) => setQuery(e.target.value)} className="form-control mb-2 w-100"
                         placeholder="Buscar carreras, instituciones..." />
                     <p className="text-center">¿Ya sabes qué estudiar? Busca becas y beneficios</p>
-                    <button id="searchButton" onClick={handleSearch} className="btn btn-primary w-25">Buscar aqui</button>
+                    <button id="home-searchButton" onClick={handleSearch} className="btn btn-primary w-25">Buscar aqui</button>
                 </div>
             </div>
         </section>
