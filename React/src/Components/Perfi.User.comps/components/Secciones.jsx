@@ -5,28 +5,28 @@ import Setting from '../../../../public/Setting.svg'
 
 function Secciones() {
     return(
-        <div className="sections">
-        <div className="row">
+        <div className="user-sections">
+        <div className="section-row">
           {/* <!-- Elementos guardados --> */}
-          <img src={bookmark} className="col-1" />
+          <img src={bookmark} alt='Guardados' />
           <h5 className="col-11">Elementos Guardados</h5>
         </div>
         <hr />
-        <div className="row">
+        <div className="section-row">
           {/* <!-- Historial de búsqueda --> */}
-          <img src={Clock} className="col-1" />
+          <img src={Clock} alt='Historial de búsqueda' />
           <h5 className="col-11">Historial de Búsqueda</h5>
         </div>
         <hr />
-        <div className="row">
+        <div className="section-row">
           {/* <!-- Becas y beneficios --> */}
-          <img src={Certificate} className="col-1" />
+          <img src={Certificate} alt='Becas y beneficios' />
           <h5 className="col-11">Becas y Beneficios</h5>
         </div>
         <hr />
-        <div className="row">
+        <div className="section-row">
           {/* <!-- Configuración --> */}
-          <img src={Setting} className="col-1" />
+          <img src={Setting} alt='Configuración' />
           <h5 className="col-11">Configuración</h5>
         </div>
       </div>

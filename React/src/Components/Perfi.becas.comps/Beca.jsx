@@ -1,5 +1,5 @@
 import { useState,useEffect } from 'react'
-import '../../../../PerfilBeca/Beca.css'
+import '../../../src/Components/Perfi.becas.comps/Beca.css'
 
 
 function Beca() {
@@ -37,38 +37,39 @@ function Beca() {
 
     return (
         <>
-        <div className="container-fluid">
+        <div className="beca-container">
             <div className="row">
-                <div className="image-placeholder col-sm-3">
+                <div className="beca-image col-sm-3">
                     <img
-                        src="#"
+                        src={beca.img || "#"}
                         className="img-fluid"
                         style={{ borderRadius: "8px" }}
                         alt="Beca"
                     />
                 </div>
 
-                <div className="container col-sm-8">
-                    <div className="subtitle">{beca.institucionId || "Institución no disponible"}</div>
-                    <h1 className="title">{beca.nombre || "Nombre no disponible"}</h1>
+                <div className=" col-sm-8">
+                    <div className="beca-subtitle">{beca.institucionId || "Institución no disponible"}</div>
+                    <h1 className="beca-title">{beca.nombre || "Nombre no disponible"}</h1>
 
-                    <div className="tags">
-                        <div className="tag"> {beca.areas || "Área no especificada"} </div>
-                        <div className="tag"> RSH: {beca.requisitos?.RSH}% </div>
-                        <div className="tag"> PAES: {beca.requisitos?.puntaje} </div>
+                    <div className="beca-tags">
+                        <div className="beca-tag"> {beca.areas || "Área no especificada"} </div>
+                        <div className="beca-tag"> RSH: {beca.requisitos?.RSH}% </div>
+                        <div className="beca-tag"> PAES: {beca.requisitos?.puntaje} </div>
                     </div>
                 </div>
             </div>
 
-            <div className="section-title">Acerca de esta beca</div>
-            <p>
+            <div className="beca-section-title">Acerca de esta beca</div>
+            <p className="beca-description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nostrum placeat dicta laborum autem neque amet beatae? Commodi similique ullam neque, ab quos sapiente quo, repudiandae aspernatur autem amet dolore.
             </p>
-            <p>
+            <p className="beca-description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure illum nobis error laboriosam quis? Nulla, itaque vitae consequuntur libero distinctio ratione tenetur, dolores laborum eveniet recusandae corrupti aperiam dolorem accusantium.
             </p>
 
-          
+            <a href="#" className='beca-button'>Ver convocatoria</a>
+
         </div>
         </>
     )

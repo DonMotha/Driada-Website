@@ -5,12 +5,12 @@ function Encabezado() {
         <div className="text-center">
         {/* <!-- Encabezado --> */}
         <img
-          className="foto-usuario"
+          className="user-foto"
           src={LogoUsuario}
           alt="Imagen vacía de usuario invitado"
         />
-        <h1 className="title">Usuario invitado</h1>
-        <p className="subtitle">Explora sin límites</p>
+        <h1 className="user-title">Usuario invitado</h1>
+        <p className="user-subtitle">Explora sin límites</p>
       </div>
     )
 }

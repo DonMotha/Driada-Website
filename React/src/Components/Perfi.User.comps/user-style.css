@@ -1,0 +1,52 @@
+/* Imagen */
+.user-foto {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Títulos */
+.user-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.user-subtitle {
+  font-weight: 400;
+  font-style: italic;
+  color: #555;
+}
+
+/* Números */
+.user-numbers h4 {
+  color: #377ec0;
+  font-weight: 700;
+}
+.user-numbers p {
+  font-weight: 300;
+  font-size: 1rem;
+}
+.user-numbers .user-divider {
+  border-right: 1px solid #ccc;
+}
+
+/* Secciones */
+.user-sections {
+  margin-top: 2rem;
+}
+.user-sections .section-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+.user-sections img {
+  width: 25px;
+  height: 25px;
+}
+.user-sections h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}

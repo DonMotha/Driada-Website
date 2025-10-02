@@ -1,21 +1,19 @@
 
 import { Routes, Route } from "react-router-dom";
 import Home from './Components/Home.comps/Home'
-
-import '../src/Components/Home.comps/stylehome.css'
-import "./Components/Nav.comps/Navbar";
-import "./Components/Foot.comps/Footer";
 import Footer from "./Components/Foot.comps/Footer";
 import Navbar from "./Components/Nav.comps/Navbar";
 import Insti from "../src/Components/Insti.comps/insti";
 import User from "./Components/Perfi.User.comps/User";
-import '../src/App.css';
 import BecasCarreras from "../src/Components/Becas.comps/Becas-C";
 import Beca from "./Components/Perfi.becas.comps/Beca";
 import PerfilInsti from "./Components/Perfi.insti.comps/Hero";
 import Carreras from "./Components/Carreras.comps/Carreras";
 import Hero from "./Components/Perfi.insti.comps/Hero";
-
+import '../src/App.css';
+import '../src/Components/Home.comps/stylehome.css'
+import "./Components/Nav.comps/Navbar";
+import "./Components/Foot.comps/Footer";
 
 
 function App() {

@@ -1,28 +1,15 @@
-/* Navbar */
-/*.navbar {
-  padding: 0.8rem 1rem;
-  font-weight: 500;
-}
-
-.navbar .nav-link.active {
-  color: #1062fe !important;
-}
-
-.navbar-brand {
-  font-weight: 700;
-  color: #1062fe !important;
-}*/
-
-.container-fluid {
+/* Contenedor principal */
+.beca-container {
   max-width: 1000px;
-  margin: 20px auto 20px;
+  margin: 20px auto;
   padding: 20px;
   border: 1px solid #ddd;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
-.image-placeholder {
+/* Imagen */
+.beca-image {
   width: 30%;
   height: 200px;
   background: #f2f2f2;
@@ -36,51 +23,63 @@
   margin-bottom: 20px;
 }
 
-h1.title {
+/* Títulos */
+.beca-title {
   margin: 0;
   font-size: 2rem;
   font-weight: 700;
 }
-.subtitle {
+
+.beca-subtitle {
   font-size: 1.2rem;
   color: #777;
   margin-bottom: 8px;
 }
-.tags {
+
+/* Tags */
+.beca-tags {
   display: flex;
   gap: 10px;
   margin: 10px 0;
   flex-wrap: wrap;
 }
-.tag {
+
+.beca-tag {
   border: 1px solid #aaa;
   border-radius: 20px;
   padding: 5px 14px;
   font-size: 0.9rem;
   background: #f9f9f9;
 }
-.rating {
+
+/* Calificación o rating */
+.beca-rating {
   display: flex;
   align-items: center;
   gap: 8px;
   margin: 10px 0;
   font-size: 1rem;
 }
-.rating span {
+
+.beca-rating span {
   font-weight: bold;
 }
-.section-title {
+
+/* Secciones */
+.beca-section-title {
   margin-top: 20px;
   font-weight: bold;
   font-size: 1.2rem;
 }
-p {
+
+.beca-description {
   line-height: 1.6;
   margin-top: 8px;
   font-size: 1rem;
 }
 
-.button {
+/* Botón */
+.beca-button {
   display: inline-block;
   background: #1062fe;
   color: #fff;
@@ -92,31 +91,7 @@ p {
   margin-top: 25px;
   transition: background 0.3s;
 }
-.button:hover {
+
+.beca-button:hover {
   background: #333;
 }
-
-/* Footer */
-/*footer {
-  background: #0d47a1;
-  color: white;
-  padding: 3rem 1rem;
-  height: auto;
-}
-
-footer h5 {
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
-footer a {
-  color: #ffffffb3; /* blanco semi-transparente */
-  /*text-decoration: none;
-}
-
-footer a:hover {
-  color: #fff;
-}
-footer a i {
-  transition: color 0.3s, transform 0.2s;
-}*/
