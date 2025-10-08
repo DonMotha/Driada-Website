@@ -2,10 +2,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 const mongoose = require("mongoose")
+const {dbConneccion} = require("./src/Data/coneccion")
 
-mongoose.connect("mongodb+srv://valentinavaldiviame:Driada12345@cluster0.9woi1em.mongodb.net/Driada?retryWrites=true&w=majority")
-  .then(()=> console.log("Conexión exitosa a MongoDb"))
-  .catch(err=>console.error("Error al conectar a MongoDB",err.message));
+dbConneccion();
 
 const institucionSchema = new mongoose.Schema({
   NOMBRE: { type: String, required: true }
