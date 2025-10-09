@@ -1,7 +1,0 @@
-{
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact"
-    },
-    "codium.enable": true,
-    "codium.editorButton": true
-}
