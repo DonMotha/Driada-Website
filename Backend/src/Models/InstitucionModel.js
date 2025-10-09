@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const institucionSchema=new Schema({
-  Nombre: { type: String, required: true },
+  Nombre: { type: String, require: true },
   Tipo: { type: String, require: true },
   Localidad: {type:String, require:true},
   Description:{type:String, require:true},

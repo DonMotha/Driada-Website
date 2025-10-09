@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
+require("dotenv").config()
 
 const dbConexion = async () => {
     try {
-        await mongoose.connect("mongodb+srv://valentinavaldiviame:Driada12345@cluster0.9woi1em.mongodb.net/Driada?retryWrites=true&w=majority");
+        await mongoose.connect(process.env.MONGODB_URI);
         console.log("Conexión exitosa a MongoDb")
     } catch (error) {
         throw new Error("Error a la hora de iniciar la base de datos");
