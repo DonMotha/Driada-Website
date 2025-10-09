@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 const mongoose = require("mongoose")
 const {dbConneccion} = require("./src/Data/coneccion")
-
+const apiRoutes = require("./src/Routes/Routes")
 dbConneccion();
 
 const institucionSchema = new mongoose.Schema({
@@ -59,3 +59,5 @@ app.post('/', (req, res) => {
 app.listen(port, () => {
 console.log(`Example app listening on port ${port}`)
 })
+
+app.use("/api", apiRoutes);
