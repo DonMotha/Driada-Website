@@ -9,10 +9,6 @@ router.post("/instituciones/:id/updateOpinion",updatePuntuacion)
 
 
 
-// Controllers
-
-
-
 
 // Becas
 

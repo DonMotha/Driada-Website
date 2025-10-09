@@ -1,4 +1,4 @@
-const { Beca } = require("../Models/BecasModel");
+const Beca = require("../Models/BecasModel");
 
 // GET /api/becas?activa=true&institutionId=...&area=Educación%20Superior
 const getBecas = async (req, res, next) => {
