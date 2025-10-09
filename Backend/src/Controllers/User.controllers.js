@@ -8,60 +8,32 @@ const JWT_ISSUER = "Driada-Website";
 const BCRYPT_COST = parseInt(process.env.BCRYPT_COST || "12", 10);
 
 //Registro de usuario
-const RegistroUser = async(req,res)=>{
-    try{
-        const {nombre,correo,password,edad,localidad} = req.body ||{};
+const RegistroUser = async (req, res) => {
+  try {
+    const { name, correo, password, edad, localidad } = req.body || {};
+    if (!name || !correo || !password || edad == null)
+      return res.status(400).json({ message: "Debe ingresar todos los requerimientos" });
 
-        if (!nombre || !correo || !password || !localidad || edad === undefined || edad===null){
-            return  res.status(400).json({message:"Debe ingresar todas los requerimientos"})
-        }
+    const correoNorm = String(correo).trim().toLowerCase();
+    if (await Usuario.exists({ correo: correoNorm }))
+      return res.status(409).json({ message: "El correo ya está registrado" });
 
-        const correoNormal = String(correo).trim().toLowerCase()
-        const nombreNormal = String(nombre).trim()
-        const edadNum = Number(edad)
-        const ubicacion = String(localidad)
+    const passwordHash = await bcrypt.hash(String(password).trim(), BCRYPT_COST);
 
-        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRe.test(correo))
-            return res.status(400).json({message: "Correo invalido"})
+    const nuevo = await Usuario.create({
+      name: String(name).trim(),
+      correo: correoNorm,
+      passwordHash,
+      edad: Number(edad),
+      localidad
+    });
 
-        if (!Number.isFinite(edadNum) || edadNum<0 || edadNum>120)
-            return res.status(400).json({message:"Edad invalida"})
+    res.status(201).json({ name: nuevo.name, correo: nuevo.correo, edad: nuevo.edad, localidad: nuevo.localidad });
+  } catch (e) {
+    res.status(500).json({ message: "Error interno" });
+  }
+};
 
-        if (String(password).length <8)
-            return res.status(400).json({message:"El password debe tener al menos 8 caracteres"})
-
-        const yaexiste = await Usuario.exists({correo:correoNormal})
-        if(yaexiste)
-            return res.status(409).json({message: "El correo ya existe"})
-
-        const passwordHash = await bcrypt.hash(String(password),12)
-
-        const nuevo = await Usuario.create({
-            name:nombreNormal,
-            correo:correoNormal,
-            passwordHash,
-            edad:edadNum,
-            localidad:ubicacion
-        })
-
-        return res.status(201).json({
-            nombre:nuevo.name,
-            correo: nuevo.correo,
-            edad: nuevo.edad,
-            localidad : nuevo.localidad,
-            createdAt: nuevo.createdAt
-        })
-        
-
-    }catch (err){
-        if (err && err.code === 1100 && err.keyPattern?.correo)
-            return res.status(409),json({message: "El correo ya esta registrado"})
-
-        console.error("Error en RegistroUser",err)
-        return res.status(500).json({message:"Error interno"})
-    }
-}
 
 //VALIDAR USUARIO
 const LoginUser = async (req, res) => {
