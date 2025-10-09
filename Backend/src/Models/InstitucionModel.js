@@ -1,4 +1,4 @@
-const {Schema,model} = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const institucionSchema=new Schema({
   Nombre: { type: String, required: true },
@@ -10,6 +10,6 @@ const institucionSchema=new Schema({
   Puntuacion:{type:Number,require:true},
   CantiOpiniones:{type:Number}
 })
-;
+    ;
 
-module.exports = model("Institucion",institucionSchema,"Instituciones")
+module.exports = model("Institucion", institucionSchema, "Instituciones")
