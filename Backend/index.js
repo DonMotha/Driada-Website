@@ -1,8 +1,8 @@
 const app = require("./src/App/App")
 const port = 3000
-const {dbConneccion} = require("./src/Data/coneccion")
+const {dbConexion} = require("./src/Data/conexion")
 
-dbConneccion();
+dbConexion();
 
 
 app.listen(port, () => {
