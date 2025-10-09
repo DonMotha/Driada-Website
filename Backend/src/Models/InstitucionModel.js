@@ -1,14 +1,14 @@
 const {Schema,model} = require("mongoose");
 
 const institucionSchema=new Schema({
-  Nombre: { type: String, required: true },
+  Nommbre: { type: String, required: true },
   Tipo: { type: String, require: true },
   Localidad: {type:String, require:true},
   Description:{type:String, require:true},
   link:{type:String, require:true},
   img:{type:String, require:true},
   Puntuacion:{type:Number,require:true},
-  CantiOpiniones:{type:Number}
+  CantOpiniones:{type:Number}
 })
 ;
 

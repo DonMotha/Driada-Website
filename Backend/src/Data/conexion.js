@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const dbConneccion = async ()=>{
+const dbConexion = async ()=>{
     try{
        await  mongoose.connect("mongodb+srv://valentinavaldiviame:Driada12345@cluster0.9woi1em.mongodb.net/Driada?retryWrites=true&w=majority");
        console.log("Conexión exitosa a MongoDb")
@@ -9,4 +9,4 @@ const dbConneccion = async ()=>{
     }
 };
 
-module.exports = {dbConneccion};
+module.exports = {dbConexion};
