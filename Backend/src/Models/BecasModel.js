@@ -1,9 +1,7 @@
-const mongoose = require("mongoose")
-
-const becaSchema=new mongoose.Schema({
+const {Schema,model} = require("mongoose");
+const becaSchema=new Schema({
     
 })
 
-const Becas = mongoose.model("Beca",becaSchema,"Becas")
+module.exports = model("Beca",becaSchema,"Becas")
 
-module.exports = {Becas}
