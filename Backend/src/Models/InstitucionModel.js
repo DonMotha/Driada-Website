@@ -1,9 +1,15 @@
-const mongoose = require("mongoose")
+const {Schema,model} = require("mongoose");
 
-const institucionSchema=new mongoose.Schema({
-    
+const institucionSchema=new Schema({
+  Nommbre: { type: String, required: true },
+  Tipo: { type: String, require: true },
+  Localidad: {type:String, require:true},
+  Description:{type:String, require:true},
+  link:{type:String, require:true},
+  img:{type:String, require:true},
+  Puntuacion:{type:Number,require:true},
+  CantOpiniones:{type:Number}
 })
+;
 
-const Institucion = mongoose.model("Institucion",institucionSchema,"Instituciones")
-
-module.exports = {Institucion}
+module.exports = model("Institucion",institucionSchema,"Instituciones")

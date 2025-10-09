@@ -1,9 +1,8 @@
-const mongoose = require("mongoose")
+const {Schema,model} = require("mongoose");
 
-const carreraSchema=new mongoose.Schema({
+const carreraSchema=new Schema({
     
 })
 
-const Carreras = mongoose.model("Institucion",carreraSchema,"Carreras")
+module.exports = model("Institucion",carreraSchema,"Carreras")
 
-module.exports = {Carreras}
