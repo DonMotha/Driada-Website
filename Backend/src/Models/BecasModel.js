@@ -1,6 +1,7 @@
-const mongoose = require("mongoose");
 
-const becaSchema = new mongoose.Schema(
+const { Schema , model} = require("mongoose");
+
+const becaSchema = new Schema(
     {
         nombre: { type: String, required: true },
         institutionId: { type: mongoose.Schema.Types.ObjectId, ref: "Institucion", required: true },
@@ -18,5 +19,5 @@ const becaSchema = new mongoose.Schema(
     { collection: "Becas", timestamps: true }
 );
 
-const Beca = mongoose.model("Beca", becaSchema);
+const Beca = model("Beca", becaSchema, "Becas");
 module.exports = { Beca };
