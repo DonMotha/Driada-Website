@@ -1,4 +1,4 @@
 /.vscode
-
+/.env
 ./Backend/node_modules
 ./Backend/.env

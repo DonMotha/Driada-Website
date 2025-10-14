@@ -1,34 +1,33 @@
-import { Link } from "react-router-dom";
-import RatingBadge from "./RatingBadge";
-
-
-
-
-function Card({item}) {
-    if (!item) return null; // 👈 evita render si no hay props
-    return (
-        <div className="col-6 col-md-4">
-            <div className="card institution-card h-100" data-url="detalle.html?id=1">
-                <img
-                    src={item.img}
-                    className="institution-card-img-top"
-                    alt={item.nombre}
-                    onError={(e) => { e.currentTarget.src = "/imagenes/default.png"; }} // backup
-                />
-                <div className="card-body">
-                    <h5 className="card-title fw-semibold d-flex justify-content-between">
-                        {item.nombre}
-                        <RatingBadge value={item.rating} />
-                    </h5>
-                    <p className="card-text">{item.desc}</p>
-                    <p className="text-muted small mb-0">📍 {item.ciudad}</p>
-                    <Link to={`/detalle/${item.id}`} className="btn btn-outline-primary mt-2">
-                        Ver más
-                    </Link>
-                </div>
-            </div>
+// Home.comps/components/Cards.jsx
+export default function Card({ inst }) {
+  return (
+    <div className="card h-100 shadow-sm">
+      <div className="ratio ratio-1x1" style={{ background: "#f3f6fb" }}>
+        <img
+          src={inst.img || '/placeholder-insti.png'}
+          alt={inst.nombre || 'Institución'}
+          loading="lazy"
+          style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+          onError={(e) => { e.currentTarget.src = '/placeholder-insti.png'; }}
+        />
+      </div>
+      <div className="card-body">
+        <div className="d-flex justify-content-between align-items-start">
+          <h5 className="card-title mb-1">{inst.nombre}</h5>
+          {inst.puntuacion != null && (
+            <span className="badge bg-primary-subtle text-primary fw-semibold">
+              {Number(inst.puntuacion).toFixed(1)}
+            </span>
+          )}
         </div>
-    )
+        <p className="card-text text-muted small mb-0">{inst.tipo}</p>
+        <a
+          className="btn btn-outline-primary btn-sm mt-3"
+          href={`/detalle/${inst.id}`}
+        >
+          Ver más
+        </a>
+      </div>
+    </div>
+  );
 }
-
-export default Card
