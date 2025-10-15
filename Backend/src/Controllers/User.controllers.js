@@ -7,89 +7,143 @@ const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "7d";
 const JWT_ISSUER = "Driada-Website";
 const BCRYPT_COST = parseInt(process.env.BCRYPT_COST || "12", 10);
 
-//Registro de usuario
-const RegistroUser = async (req, res) => {
+// helper firma
+const signJwt = (payload, opts = {}) =>
+    jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN, issuer: JWT_ISSUER, ...opts });
+
+// POST /api/users/register  y /api/registro
+const RegistroUser = async (req, res, next) => {
     try {
-        const { name, correo, password, edad, localidad } = req.body || {};
-        if (!name || !correo || !password || edad == null)
-            return res.status(400).json({ message: "Debe ingresar todos los requerimientos" });
-
-        const correoNorm = String(correo).trim().toLowerCase();
-        if (await Usuario.exists({ correo: correoNorm }))
-            return res.status(409).json({ message: "El correo ya está registrado" });
-
-        const passwordHash = await bcrypt.hash(String(password).trim(), BCRYPT_COST);
-
-        const nuevo = await Usuario.create({
-            name: String(name).trim(),
-            correo: correoNorm,
-            passwordHash,
-            edad: Number(edad),
+        const {
+            email,
+            correo,
+            password,
+            contrasena,
+            nombre,
+            name,
+            apellido,
+            username,
+            edad,
             localidad
+        } = req.body || {};
+
+        const correoNorm = String(correo || email || "").trim().toLowerCase();
+        if (!correoNorm) return res.status(400).json({ error: "Email/correo requerido" });
+
+        const exists = await Usuario.exists({ $or: [{ correo: correoNorm }, { email: correoNorm }] });
+        if (exists) return res.status(409).json({ error: "Correo ya registrado" });
+
+        const passPlain = (password ?? contrasena) || undefined;
+        const passwordHash = passPlain ? await bcrypt.hash(String(passPlain).trim(), BCRYPT_COST) : undefined;
+
+        const user = await Usuario.create({
+            correo: correoNorm,
+            email: correoNorm,
+            passwordHash,
+            nombre: (nombre || name || "").trim() || undefined,
+            apellido: (apellido || "").trim() || undefined,
+            username: (username || "").trim() || undefined,
+            edad: (edad != null ? Number(edad) : undefined),
+            localidad: localidad,
+            perfilEducativo: { tipo: "estudiante" }
         });
 
-        res.status(201).json({ name: nuevo.name, correo: nuevo.correo, edad: nuevo.edad, localidad: nuevo.localidad });
-    } catch (e) {
-        res.status(500).json({ message: "Error interno" });
+        res.status(201).json({
+            id: user._id,
+            correo: user.correo,
+            email: user.email,
+            nombre: user.nombre || user.name,
+            edad: user.edad,
+            localidad: user.localidad
+        });
+    } catch (err) {
+        next ? next(err) : res.status(500).json({ error: "Error interno" });
     }
 };
 
-
-//VALIDAR USUARIO
-const LoginUser = async (req, res) => {
+// POST /api/users/login  y /api/login
+const LoginUser = async (req, res, next) => {
     try {
-        // 1) entrada (acepta "password" o "contrasena")
-        const { correo, password, contrasena } = req.body || {};
-        const pass = (password ?? contrasena);
-        if (!correo || !pass) {
-            return res.status(400).json({ message: "Correo y password son requeridos" });
-        }
-        const correoNorm = String(correo).trim().toLowerCase();
+        const { correo, email, password, contrasena, otp } = req.body || {};
+        const correoNorm = String(correo || email || "").trim().toLowerCase();
+        const pass = password ?? contrasena;
+        if (!correoNorm || !pass) return res.status(400).json({ error: "Correo y password requeridos" });
 
-        // 2) traer usuario + hash (y también 'password' por si existe legado)
-        const user = await Usuario
-            .findOne({ correo: correoNorm })
-            .select("+passwordHash password nombre correo edad"); // password por compatibilidad
+        // Traer usuario incluyendo passwordHash y, por compatibilidad, un posible "password" legacy
+        const user = await Usuario.findOne({ $or: [{ correo: correoNorm }, { email: correoNorm }] })
+            .select("+passwordHash password nombre correo email edad roles twoFA");
 
-        if (!user) return res.status(401).json({ message: "Credenciales inválidas" });
+        if (!user) return res.status(401).json({ error: "Credenciales inválidas" });
 
-        // 3) verificar
+        // verificar
         const plain = String(pass);
         let ok = false;
 
         if (user.passwordHash) {
             ok = await bcrypt.compare(plain, user.passwordHash);
         } else if (user.password && typeof user.password === "string") {
-            // soporte legado: password plano almacenado
             ok = (plain === user.password);
             if (ok) {
-                // migrar a hash y borrar el plano
+                // Migrar a hash y remover password plano
                 const newHash = await bcrypt.hash(user.password, BCRYPT_COST);
-                await Usuario.updateOne(
-                    { _id: user._id },
-                    { $set: { passwordHash: newHash }, $unset: { password: "" } }
-                );
+                await Usuario.updateOne({ _id: user._id }, { $set: { passwordHash: newHash }, $unset: { password: "" } });
             }
         }
+        if (!ok) return res.status(401).json({ error: "Credenciales inválidas" });
 
-        if (!ok) return res.status(401).json({ message: "Credenciales inválidas" });
+        // 2FA opcional (placeholder; no bloquea si no está configurado)
+        if (user.twoFA?.enabled) {
+            if (!otp) return res.status(401).json({ error: "Se requiere OTP" });
+            // TODO: validar TOTP con secretEnc desencriptado
+        }
 
-        // 4) emitir JWT
-        const token = jwt.sign(
-            { uid: user._id.toString(), correo: user.correo, nombre: user.nombre },
-            JWT_SECRET,
-            { expiresIn: JWT_EXPIRES_IN, issuer: JWT_ISSUER }
-        );
+        // auditoría
+        user.ultimoLogin = new Date();
+        user.loginHistory = user.loginHistory || [];
+        user.loginHistory.push({
+            ip: req.ip,
+            userAgent: req.headers["user-agent"] || "unknown"
+        });
+        await user.save();
+
+        // payload: compat con ambos middlewares
+        const token = signJwt({
+            sub: user._id.toString(),
+            roles: user.roles || ["estudiante"],
+            uid: user._id.toString(),
+            correo: user.correo || user.email,
+            nombre: user.nombre || user.name
+        });
 
         return res.status(200).json({
             token,
-            user: { id: user._id, nombre: user.nombre, correo: user.correo, edad: user.edad }
+            user: {
+                id: user._id,
+                correo: user.correo,
+                email: user.email,
+                roles: user.roles,
+                nombre: user.nombre || user.name,
+                edad: user.edad
+            }
         });
-
     } catch (err) {
-        console.error("Error en LoginUser:", err);
-        return res.status(500).json({ message: "Error interno" });
+        next ? next(err) : res.status(500).json({ error: "Error interno" });
     }
 };
 
-module.exports = { RegistroUser, LoginUser }
+// GET /api/users/me y /api/me (con requireAuth)
+const me = async (req, res, next) => {
+    try {
+        const id = req.userId || req.user?.uid || req.user?.sub;
+        if (!id) return res.status(401).json({ error: "No autenticado" });
+
+        const user = await Usuario.findById(id).select("-passwordHash -salt -twoFA.secretEnc -twoFA.backupCodesHash");
+        if (!user) return res.status(404).json({ error: "Usuario no encontrado" });
+
+        res.json(user);
+    } catch (err) {
+        next ? next(err) : res.status(500).json({ error: "Error interno" });
+    }
+};
+
+module.exports = { RegistroUser, LoginUser, me }
