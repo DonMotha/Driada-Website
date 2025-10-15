@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const axios = require("axios");
 const {getInstitucion,getInstitucionesPrevias,updatePuntuacion} = require('../Controllers/Insti.controllers');
 const {getBecas,getBecaById,createBeca,updateBeca,deleteBeca} = require('../Controllers/Becas.controllers');
 const {RegistroUser,LoginUser,me} = require("../Controllers/User.controllers")
@@ -9,7 +10,8 @@ const {getCarreras,getCarreraId} = require('../Controllers/Carreras.controllers'
 // Instituciones
 router.get("/institucionesPrevias", getInstitucionesPrevias);
 router.get("/instituciones/:id", getInstitucion);
-router.post("/instituciones/:id/updateOpinion",updatePuntuacion) 
+router.post("/instituciones/:id/updateOpinion",updatePuntuacion);
+
 
 
 // Becas

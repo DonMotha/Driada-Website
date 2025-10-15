@@ -1,3 +1,4 @@
+const { ɵ_sanitizeUrl } = require("@angular/core");
 const Institucion = require("../Models/InstitucionModel");
 const { isValidObjectId } = require('mongoose'); 
 
@@ -5,7 +6,7 @@ const { isValidObjectId } = require('mongoose');
 const getInstitucionesPrevias = async (req, res) => {
   try { //saca solo los datos nombre, tipo y puntuacion
     const docs = await Institucion.find({}) //guarda en doc
-      .select('_id nombre Nombre tipo Tipo puntuacion Puntuacion')
+      .select('_id nombre Nombre tipo Tipo puntuacion Puntuacion img Img')
       .lean();
 
     
@@ -14,10 +15,11 @@ const getInstitucionesPrevias = async (req, res) => {
     }
     //los datos de la bd, map los recorre y los guarda en data
     const data = docs.map(d => ({
-      _id: d._id,
-      nombre: d.nombre ?? d.Nombre ?? null,
-      tipo: d.tipo ?? d.Tipo ?? null,
-      puntuacion: d.puntuacion ?? d.Puntuacion ?? null,
+  id: String(d._id),
+  nombre: d.nombre ?? d.Nombre ?? null,
+  tipo: d.tipo ?? d.Tipo ?? null,
+  puntuacion: d.puntuacion ?? d.Puntuacion ?? null,
+  img:  ɵ_sanitizeUrl (d.img ?? null)  
     }));
     //retornas data y da el estatus 200
     return res.status(200).json({ message: 'Instituciones (preview)', data, count: data.length });
@@ -103,5 +105,7 @@ const updatePuntuacion = async (req, res) => {
     return res.status(500).json({ message: 'Error al actualizar' });
   }
 };
+
+
 
 module.exports={getInstitucion,getInstitucionesPrevias, updatePuntuacion}
