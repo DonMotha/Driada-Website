@@ -1,4 +1,4 @@
-// src/Controllers/Insti.controllers.js
+
 const Institucion = require("../Models/InstitucionModel");
 const { isValidObjectId } = require('mongoose'); 
 
@@ -30,11 +30,11 @@ const getInstitucionesPrevias = async (req, res) => {
 
     // Los datos de la BD, map los recorre y los guarda en data
     const data = docs.map(d => ({
-      id: String(d._id),
-      nombre: d.nombre ?? d.Nombre ?? null,
-      tipo: d.tipo ?? d.Tipo ?? null,
-      puntuacion: d.puntuacion ?? d.Puntuacion ?? null,
-      img: sanitizeUrl(d.img ?? d.Img ?? null) // Reemplazado ɵ_sanitizeUrl por sanitizeUrl
+  id: String(d._id),
+  nombre: d.nombre ?? d.Nombre ?? null,
+  tipo: d.tipo ?? d.Tipo ?? null,
+  puntuacion: d.puntuacion ?? d.Puntuacion ?? null,
+  img: (d.img ?? null)  
     }));
 
     // Retornas data y da el estatus 200

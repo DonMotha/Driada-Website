@@ -4,27 +4,44 @@ import { api } from "../../api/client";
 //import logo from "../../../src/assets/logo.png";
 import '../../../src/Components/Nav.comps/Nav.css'
 
+function Avatar({ user, size = 28 }) {
+  const name = user?.nombre || user?.name || user?.email || "U";
+  const initials = name.split(" ").map(w => w[0]).join("").slice(0,2).toUpperCase();
+  const style = { width: size, height: size, borderRadius: "50%", objectFit: "cover" };
+
+  if (user?.avatarUrl) {
+    // Si avatarUrl es relativo (p.ej. /uploads/avatars/xxx.jpg), compón base de backend quitando /api
+    const API = (import.meta.env.VITE_API_URL || "http://localhost:4000/api").replace(/\/api$/, "");
+    const src = user.avatarUrl.startsWith("http") ? user.avatarUrl : API + user.avatarUrl;
+    return <img src={src} alt={name} style={style} />;
+  }
+  return (
+    <div style={{
+      ...style, background: "#1062FE", color: "#fff",
+      display: "inline-flex", alignItems: "center", justifyContent: "center",
+      fontSize: 12, fontWeight: 600
+    }}>
+      {initials}
+    </div>
+  );
+}
+
 function Navbar() {
   const [user, setUser] = useState(() => {
-    try {
-      const cached = sessionStorage.getItem("me");
-      return cached ? JSON.parse(cached) : null;
-    } catch { return null; }
+    try { return JSON.parse(sessionStorage.getItem("me")) || null; } catch { return null; }
   });
 
   useEffect(() => {
     const token = localStorage.getItem("jwtToken");
-    if (!token) {
-      setUser(null);
-      return;
-    }
+    if (!token) { setUser(null); return; }
     let alive = true;
     (async () => {
       try {
         const { data } = await api.get("/me");
+        const me = data.user || data;
         if (alive) {
-          setUser(data.user || data);
-          sessionStorage.setItem("me", JSON.stringify(data.user || data));
+          setUser(me);
+          sessionStorage.setItem("me", JSON.stringify(me));
         }
       } catch {
         localStorage.removeItem("jwtToken");
@@ -39,7 +56,7 @@ function Navbar() {
     localStorage.removeItem("jwtToken");
     sessionStorage.removeItem("me");
     setUser(null);
-    // opcional: window.location.href = "/";
+    window.location.href = "/"; // fuerza refresco de navbar si hace falta
   };
 
   return (
@@ -64,11 +81,12 @@ function Navbar() {
             </div>
           ) : (
             <div className="dropdown">
-              <button className="btn btn-outline-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown">
-                {user.nombre || user.name || "Usuario"}
+              <button className="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2 dropdown-toggle" data-bs-toggle="dropdown">
+                <Avatar user={user} size={28} />
+                <span>{user.nombre || user.name || user.email}</span>
               </button>
               <ul className="dropdown-menu dropdown-menu-end">
-                <li><a className="dropdown-item" href="/me">Mi perfil</a></li>
+                <li><a className="dropdown-item" href="/perfil">Mi perfil</a></li>
                 <li><hr className="dropdown-divider" /></li>
                 <li><button className="dropdown-item" onClick={logout}>Salir</button></li>
               </ul>

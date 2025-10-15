@@ -20,10 +20,22 @@ function Register() {
     setError("");
     setOk(false);
     try {
+      // 1) Crear cuenta
       await api.post("/registro", form);
+
+      // 2) Auto-login con las mismas credenciales
+      const { data } = await api.post("/login", {
+        email: form.email,
+        password: form.password
+      });
+
+      // 3) Guardar token y user para hidratar Navbar
+      localStorage.setItem("jwtToken", data.token);
+      sessionStorage.setItem("me", JSON.stringify(data.user));
+
       setOk(true);
-      // Espera breve para que el usuario vea el mensaje, o navega directo
-      setTimeout(() => navigate("/login"), 600);
+      // 4) Ir al Home
+      navigate("/");
     } catch (err) {
       const status = err.response?.status;
       const msg = err.response?.data?.error || err.response?.data?.message;
@@ -35,27 +47,59 @@ function Register() {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-logo">
-        <img src={logo} alt="Logo Quiero mi beca" width="100px" />
-        <h2 className="login-appname">Quiero mi beca</h2>
+    <div className="container py-4">
+      <div className="row justify-content-center">
+        <div className="col-12 col-md-6 col-lg-4">
+          <div className="login-container">
+            <div className="login-logo">
+              <img src={logo} alt="Logo Quiero mi beca" width="100" />
+              <h2 className="login-appname">Quiero mi beca</h2>
+            </div>
+
+            <h1 className="login-title">Crear cuenta</h1>
+
+            <form className="login-form" onSubmit={handleSubmit}>
+              <input
+                className="form-control mb-2"
+                type="text"
+                name="nombre"
+                placeholder="Nombre completo"
+                value={form.nombre}
+                onChange={handleChange}
+                required
+              />
+              <input
+                className="form-control mb-2"
+                type="email"
+                name="email"
+                placeholder="Correo electrónico"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+              <input
+                className="form-control mb-3"
+                type="password"
+                name="password"
+                placeholder="Contraseña"
+                value={form.password}
+                onChange={handleChange}
+                required
+              />
+              <button type="submit" className="btn btn-primary w-100">
+                Registrarse
+              </button>
+            </form>
+
+            {error && <p className="text-danger mt-2" role="alert">{error}</p>}
+            {ok && <p className="text-success mt-2">Cuenta creada. Redirigiendo…</p>}
+
+            <p className="login-register-text mt-2">
+              ¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link>
+            </p>
+          </div>
+        </div>
       </div>
-
-      <h1 className="login-title">Crear cuenta</h1>
-
-      <form className="login-form" onSubmit={handleSubmit}>
-        <input type="text" name="nombre" placeholder="Nombre completo" value={form.nombre} onChange={handleChange} required />
-        <input type="email" name="email" placeholder="Correo electrónico" value={form.email} onChange={handleChange} required />
-        <input type="password" name="password" placeholder="Contraseña" value={form.password} onChange={handleChange} required />
-        <button type="submit" className="login-btn-primary">Registrarse</button>
-      </form>
-
-      {error && <p className="text-danger mt-2" role="alert">{error}</p>}
-      {ok && <p className="text-success mt-2">Cuenta creada. Redirigiendo…</p>}
-
-      <p className="login-register-text">
-        ¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link>
-      </p>
     </div>
   );
 }
