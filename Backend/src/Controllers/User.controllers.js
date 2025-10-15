@@ -131,19 +131,44 @@ const LoginUser = async (req, res, next) => {
     }
 };
 
-// GET /api/users/me y /api/me (con requireAuth)
+// GET /api/me
 const me = async (req, res, next) => {
     try {
         const id = req.userId || req.user?.uid || req.user?.sub;
         if (!id) return res.status(401).json({ error: "No autenticado" });
 
-        const user = await Usuario.findById(id).select("-passwordHash -salt -twoFA.secretEnc -twoFA.backupCodesHash");
+        const user = await Usuario.findById(id)
+            .select("-passwordHash -salt -twoFA.secretEnc -twoFA.backupCodesHash");
         if (!user) return res.status(404).json({ error: "Usuario no encontrado" });
 
-        res.json(user);
+        return res.json(user);
     } catch (err) {
-        next ? next(err) : res.status(500).json({ error: "Error interno" });
+        return next ? next(err) : res.status(500).json({ error: "Error interno" });
     }
 };
 
-module.exports = { RegistroUser, LoginUser, me }
+// PUT /api/me
+const updateMe = async (req, res, next) => {
+    try {
+        const id = req.userId || req.user?.uid || req.user?.sub;
+        if (!id) return res.status(401).json({ error: "No autenticado" });
+
+        const { nombre, localidad, avatarUrl, pais, ciudad, fechaNacimiento } = req.body || {};
+        const update = {};
+        if (typeof nombre === "string") update.nombre = nombre.trim();
+        if (typeof localidad === "string") update.localidad = localidad.trim();
+        if (typeof avatarUrl === "string") update.avatarUrl = avatarUrl.trim();
+        if (typeof pais === "string") update.pais = pais.trim();
+        if (typeof ciudad === "string") update.ciudad = ciudad.trim();
+        if (fechaNacimiento) update.fechaNacimiento = new Date(fechaNacimiento);
+
+        const user = await Usuario.findByIdAndUpdate(id, update, { new: true })
+            .select("-passwordHash -salt -twoFA.secretEnc -twoFA.backupCodesHash");
+
+        return res.json({ user });
+    } catch (e) {
+        return res.status(500).json({ error: "Error al actualizar perfil" });
+    }
+};
+
+module.exports = { RegistroUser, LoginUser, me, updateMe }

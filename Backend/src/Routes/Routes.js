@@ -2,7 +2,7 @@ const router = require("express").Router();
 const axios = require("axios");
 const {getInstitucion,getInstitucionesPrevias,updatePuntuacion} = require('../Controllers/Insti.controllers');
 const {getBecas,getBecaById,createBeca,updateBeca,deleteBeca} = require('../Controllers/Becas.controllers');
-const {RegistroUser,LoginUser,me} = require("../Controllers/User.controllers")
+const {RegistroUser,LoginUser,me, updateMe} = require("../Controllers/User.controllers")
 const {requireAuth,errorHandler} = require("../Middlewares/requireAuth")
 const {getCarreras,getCarreraId} = require('../Controllers/Carreras.controllers');
 
@@ -31,6 +31,7 @@ router.get("/carreras/:id", getCarreraId);
 router.post("/registro",RegistroUser)
 router.post("/login",LoginUser)
 router.get("/me",requireAuth, me)
+router.put("/me", requireAuth, updateMe)
 
 
 module.exports = router;
