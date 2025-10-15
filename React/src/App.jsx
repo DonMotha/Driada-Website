@@ -28,7 +28,7 @@ function App() {
         <Route path="/instituciones" element={<Insti />} />
         <Route path="/perfil" element={<User />} />
         <Route path="/becasycarreras" element={<BecasCarreras />} />
-        <Route path="/perfil-beca/:id" element={<Beca />} />
+        <Route path="/becas/:id" element={<Beca />} />
         <Route path="/perfil-insti" element={<PerfilInsti />} />
         <Route path="/carreras/:id" element={<Carreras />} />
 

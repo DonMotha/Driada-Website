@@ -7,7 +7,8 @@ const carreraSchema = new Schema({
     Descripcion: {type: String, required: true},
     Palabras_C: {type: String, required: true},
     Universidades_Ids: {type: Array, required: true},
-    Area: {type: String, required: true}
+    Area: {type: String, required: true},
+    Tipo:{type: String}
 })
 
 module.exports = model("Carrera",carreraSchema,"Carreras")

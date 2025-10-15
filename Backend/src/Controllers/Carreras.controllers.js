@@ -5,7 +5,9 @@ const { isValidObjectId } = require('mongoose');
 // Obtener info de todas las carreras
 const getCarreras = async (req, res) => {
     try {
-        const carreras = await Carrera.find({}).lean();
+        const carreras = await Carrera.find({})
+        .select('_id nombre NOMBRE tipo Tipo descripcion DESCRIPCION')
+        .lean();
         
         if (!carreras || carreras.length === 0) {
             return res.status(404).json({ message: 'No se encontraron carreras' });
@@ -14,13 +16,9 @@ const getCarreras = async (req, res) => {
         // Mapear los datos para mantener consistencia con getCarrera
         const data = carreras.map(carr => ({
             _id: carr._id,
-            nombre: carr.Nombre ?? carr.NOMBRE ?? null,
-            empleabilidad: carr.Empleabilidad ?? carr.EMPLEABILIDAD ?? null,
-            sueldopromedio: carr.SueldoPromedio ?? carr.SUELDOPROMEDIO ?? null,
-            descripcion: carr.Descripcion ?? carr.DESCRIPCION ?? null,
-            palabras_c: carr.Palabras_C ?? carr.PALABRAS_C ?? null,
-            universidades_ids: carr.Universidades_Ids ?? carr.UNIVERSIDADES_IDS ?? null,
-            area: carr.Area ?? carr.Area ?? carr.AREA ?? null
+            nombre: carr.Nombre ?? carr.NOMBRE ,
+            tipo: carr.tipo ?? carr.Tipo,
+            descripcion: carr.Descripcion ?? carr.DESCRIPCION ,
         }));
 
         return res.status(200).json({ 
