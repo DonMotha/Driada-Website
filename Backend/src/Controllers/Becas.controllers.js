@@ -19,7 +19,7 @@ const getBecas = async (req, res, next) => {
     }
 };
 
-// GET /api/becas/:id
+// GET /api/becas/:id 
 const getBecaById = async (req, res, next) => {
     try {
         const beca = await Beca.findById(req.params.id)
