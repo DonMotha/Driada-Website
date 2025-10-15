@@ -1,6 +1,6 @@
 import InstitutionCard from "./InstiCard";
 
-export default function InstitutionsGrid({ items, emptyText }) {
+export default function InstitutionsGrid({ items = [], emptyText ="Sin datos" }) {
   if (!items?.length) {
     return <div className="alert alert-light border text-center">{emptyText || "Sin resultados"}</div>;
   }

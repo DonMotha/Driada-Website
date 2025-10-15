@@ -1,3 +1,4 @@
+const { ɵ_sanitizeUrl } = require("@angular/core");
 const Institucion = require("../Models/InstitucionModel");
 const { isValidObjectId } = require('mongoose'); 
 
@@ -18,7 +19,7 @@ const getInstitucionesPrevias = async (req, res) => {
   nombre: d.nombre ?? d.Nombre ?? null,
   tipo: d.tipo ?? d.Tipo ?? null,
   puntuacion: d.puntuacion ?? d.Puntuacion ?? null,
-  img:  d.img ?? null
+  img:  ɵ_sanitizeUrl (d.img ?? null)  
     }));
     //retornas data y da el estatus 200
     return res.status(200).json({ message: 'Instituciones (preview)', data, count: data.length });
