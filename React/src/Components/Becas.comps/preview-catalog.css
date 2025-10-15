@@ -1,0 +1,17 @@
+
+.preview-card .cursor-pointer { cursor: pointer; }
+/* Se puede seleccionar texto dentro de la card */
+.preview-card, .preview-card * { user-select: text; }
+
+/* Clamp para que las cards queden parejas */
+.preview-card .card-title-row { min-height: 2.25rem; }
+.preview-card .desc{
+  margin-top: .25rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+/* refuerzo anti-override */
+header.mb-4 { text-align: center !important; }
+
