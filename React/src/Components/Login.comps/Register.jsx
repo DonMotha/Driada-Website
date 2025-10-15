@@ -47,10 +47,22 @@ function Register() {
   };
 
   return (
-    <div className="container py-4">
-      <div className="row justify-content-center">
-        <div className="col-12 col-md-6 col-lg-4">
-          <div className="login-container">
+    <div className="container-fluid py-5 bg-light">
+      <div className="row align-items-center min-vh-75">
+        {/* Columna izquierda: texto + imagen controlada */}
+        <div className="col-12 col-lg-6 d-none d-lg-block">
+          <div className="login-hero h-100 d-flex flex-column justify-content-center ps-5">
+            <h2 className="display-6 fw-bold mb-3">Crea tu cuenta</h2>
+            <p className="text-muted mb-4">
+              Guarda instituciones y carreras favoritas, y recibe recordatorios de postulaciones.
+            </p>
+            <img src={logo} alt="Ilustración registro" className="img-fluid hero-illustration" />
+          </div>
+        </div>
+
+        {/* Columna derecha: formulario */}
+        <div className="col-12 col-lg-5">
+          <div className="login-container ms-lg-5">
             <div className="login-logo">
               <img src={logo} alt="Logo Quiero mi beca" width="100" />
               <h2 className="login-appname">Quiero mi beca</h2>
@@ -86,12 +98,17 @@ function Register() {
                 onChange={handleChange}
                 required
               />
+
               <button type="submit" className="btn btn-primary w-100">
                 Registrarse
               </button>
             </form>
 
-            {error && <p className="text-danger mt-2" role="alert">{error}</p>}
+            {error && (
+              <p className="text-danger mt-2" role="alert">
+                {error}
+              </p>
+            )}
             {ok && <p className="text-success mt-2">Cuenta creada. Redirigiendo…</p>}
 
             <p className="login-register-text mt-2">

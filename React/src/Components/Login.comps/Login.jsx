@@ -9,7 +9,7 @@ import logo from "../../../src/assets/logo.png";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [ setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -27,19 +27,24 @@ function Login() {
     }
   };
 
-  return (
-    <div className="container py-4">
-      <div className="row justify-content-center">
-        <div className="col-12 col-md-6 col-lg-4">
-          <div className="login-container">
-            <div className="login-logo">
-              <img src={logo} alt="Logo Quiero mi beca" width="100" />
-              <h2 className="login-appname">Quiero mi beca</h2>
-            </div>
+  // Login.jsx (solo el layout exterior)
+return (
+  <div className="container-fluid py-5 bg-light">
+    <div className="row align-items-center min-vh-75">
+      {/* Izquierda: background con ilustración (no empuja el layout) */}
+      <div className="col-12 col-lg-6 d-none d-lg-block">
+        <div className="login-hero-bg h-100 d-flex flex-column justify-content-center ps-5">
+          <h2 className="display-6 fw-bold mb-3">Encuentra tu beca ideal</h2>
+          <p className="text-muted mb-0">Explora instituciones, carreras y beneficios.</p>
+          <img src={logo} alt="Ilustración" className="img-fluid hero-illustration" />
+          
+        </div>
+      </div>
 
-            <h1 className="login-title">Iniciar Sesión</h1>
-
-            <form className="login-form" onSubmit={handleSubmit}>
+      {/* Derecha: formulario */}
+      <div className="col-12 col-lg-5">
+        <div className="login-container ms-lg-5">
+          <form className="login-form" onSubmit={handleSubmit}>
               <input
                 className="form-control mb-2"
                 type="email"
@@ -69,17 +74,11 @@ function Login() {
                 </button>
               </div>
             </form>
-
-            {error && <p className="text-danger mt-2" role="alert">{error}</p>}
-
-            <p className="login-register-text mt-2">
-              ¿No tienes cuenta? <Link to="/registro">Regístrate</Link>
-            </p>
-          </div>
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 }
 
 export default Login;
