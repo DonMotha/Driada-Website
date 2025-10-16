@@ -70,7 +70,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="mainNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item"><a className="nav-link" href="/instituciones">Instituciones</a></li>
-            <li className="nav-item"><a className="nav-link" href="/becas">Becas/Carreras</a></li>
+            <li className="nav-item"><a className="nav-link" href="/becasycarreras">Becas/Carreras</a></li>
             <li className="nav-item"><a className="nav-link" href="/contacto">Contacto</a></li>
           </ul>
 

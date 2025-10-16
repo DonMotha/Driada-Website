@@ -65,7 +65,7 @@ const getInstitucion = async (req, res) => {
       nombre: inst.nombre ?? inst.Nombre ?? null,
       tipo: inst.tipo ?? inst.Tipo ?? null,
       localidad: inst.localidad ?? inst.Localidad ?? null,
-      descripcion: inst.descripcion ?? inst.Descripcion ?? null,
+      descripcion: inst.description ?? inst.Description ?? null,
       link: sanitizeUrl(inst.link ?? inst.Link ?? null), // Sanitiza link también
       img: sanitizeUrl(inst.img ?? inst.Img ?? null),    // Sanitiza img
       puntuacion: inst.puntuacion ?? inst.Puntuacion ?? null,
