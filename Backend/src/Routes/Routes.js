@@ -17,10 +17,6 @@ router.post("/instituciones/:id/updateOpinion",updatePuntuacion);
 // Becas
 router.get("/becas", getBecas);
 router.get("/becas/:id", getBecaById);
-router.post("/becas", createBeca);
-router.put("/becas/:id", updateBeca);
-router.delete("/becas/:id", deleteBeca);
-
 
 // Carreras
 router.get("/carreras", getCarreras);
