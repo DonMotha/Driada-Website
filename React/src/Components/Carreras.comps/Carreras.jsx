@@ -139,7 +139,7 @@ export default function DetalleCarrera() {
                           className="me-2 rounded"
                         />
                       )}
-                      <Link to={`/instituciones/${u.id}`}>{u.nombre || u.id}</Link>
+                      <Link to={`/detalle/${u.id}`}>{u.nombre || u.id}</Link>
                     </li>
                   ))}
                 </ul>

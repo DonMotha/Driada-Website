@@ -111,7 +111,7 @@ export default function DetalleBeca() {
               ) : (
                 <ul className="mb-0">
                   <li>
-                    <Link to={`/instituciones/${inst.id}`}>
+                    <Link to={`/detalle/${inst.id}`}>
                       {inst.nombre || inst.id}
                     </Link>
                   </li>
