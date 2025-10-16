@@ -10,10 +10,15 @@ const getBecas = async (req, res, next) => {
         if (area) filter.areas = area;
 
         const items = await Beca.find(filter)
-            .populate("institutionId", "Nombre Tipo img")
+            .select('_id nombre Nombre tipo Tipo  descripcion Descripcion ')
             .lean();
-
-        res.json(items);
+        const data = items.map(b =>({
+            _id:String(b._id),
+            nombre:b.nombre ?? b.Nombre,
+            tipo: b.tipo ?? b.tipo,
+            descripcion: b.descripcion ?? b.Descripcion
+        }))
+        res.json(data);
     } catch (err) {
         next(err);
     }
@@ -23,7 +28,6 @@ const getBecas = async (req, res, next) => {
 const getBecaById = async (req, res, next) => {
     try {
         const beca = await Beca.findById(req.params.id)
-            .populate("institutionId", "Nombre Tipo img")
             .lean();
         if (!beca) return res.status(404).json({ error: "Beca no encontrada" });
         res.json(beca);

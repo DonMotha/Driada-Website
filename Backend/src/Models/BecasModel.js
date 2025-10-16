@@ -14,7 +14,8 @@ const becaSchema = new Schema(
         },
         duracion: { type: String },         // "Carrera"
         fechas: { type: Schema.Types.Mixed }, // { inicio, fin } u otro shape
-        link: { type: String }
+        link: { type: String },
+        descripcion :{type: String}
     },
     { collection: "Becas", timestamps: true }
 );

@@ -9,18 +9,16 @@ import Header from "./components/Header"
 import '../../../src/Components/Perfi.insti.comps/style-institPerfil.css';
 // import LogGene from '../../../src/assets/LogGene.svg'
 import { fetchInstituciones } from "../../api/instituciones";
-import { fetchUpdatePuntuacion } from "../../api/instituciones";
 
 function PerfilInsti() {
 
     const { id } = useParams(); // Obtiene el ID de la URL
     const [institucion, setInstitucion] = useState(null);
-    const [puntuacion, setPuntuacion] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const carcarInstitucion = async () => {
+        const cargarInstitucion = async () => {
             try {
                 setLoading(true);
                 const data = await fetchInstituciones(id);
@@ -34,7 +32,7 @@ function PerfilInsti() {
         };
 
         if (id) {
-            carcarInstitucion();
+            cargarInstitucion();
         }
     }, [id]);
 

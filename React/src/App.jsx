@@ -13,6 +13,8 @@ import '../src/App.css';
 import '../src/Components/Home.comps/stylehome.css'
 import "./Components/Nav.comps/Navbar";
 import "./Components/Foot.comps/Footer";
+import Login from "./Components/Login.comps/Login";
+import Register from "./Components/Login.comps/Register";
 
 
 function App() {
@@ -26,8 +28,13 @@ function App() {
         <Route path="/instituciones" element={<Insti />} />
         <Route path="/perfil" element={<User />} />
         <Route path="/becasycarreras" element={<BecasCarreras />} />
-        <Route path="/perfil-beca/:id" element={<Beca />} />
+        <Route path="/becas/:id" element={<Beca />} />
+        <Route path="/perfil-insti" element={<PerfilInsti />} />
         <Route path="/carreras/:id" element={<Carreras />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/registro" element={<Register/>} />
+
+
       </Routes>
       <Footer />
     </>

@@ -1,20 +1,18 @@
-export default function BecasSearchBar({ value, onChange }) {
+// Barra de búsqueda CONTROLADA
+// - value: string actual
+// - onChange: (nuevoValor) => void
+export default function BecasSearchBar({
+  value,
+  onChange,
+  placeholder = "Buscar por nombre, tipo o descripción…",
+}) {
   return (
-    <div className="d-flex justify-content-center mb-4">
-      <div className="input-group" style={{ maxWidth: 560 }}>
-        <span className="input-group-text bg-white">
-          <i className="fa-solid fa-magnifying-glass" />
-        </span>
-        <input
-          value={value}
-          onChange={(e)=>onChange?.(e.target.value)}
-          type="search"
-          className="form-control"
-          placeholder="Buscar instituciones, ciudades..."
-          autoComplete="off"
-        />
-        <button className="btn btn-primary" type="button">Buscar</button>
-      </div>
-    </div>
+    <input
+      className="form-control"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      placeholder={placeholder}
+      aria-label="Buscar becas o carreras"
+    />
   );
 }

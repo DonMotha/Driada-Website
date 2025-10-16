@@ -1,97 +1,55 @@
-/* Contenedor principal */
-.beca-container {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+/* Hero header */
+.detail-hero {
+  background: #f8f9fa;
+  border-radius: 14px;
+  padding: 22px 22px 10px;
+  margin-bottom: 18px;
 }
 
-/* Imagen */
-.beca-image {
-  width: 30%;
-  height: 200px;
-  background: #f2f2f2;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #888;
-  font-size: 1rem;
-  margin-left: 15px;
-  margin-bottom: 20px;
-}
-
-/* Títulos */
-.beca-title {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.beca-subtitle {
-  font-size: 1.2rem;
-  color: #777;
-  margin-bottom: 8px;
-}
-
-/* Tags */
-.beca-tags {
-  display: flex;
-  gap: 10px;
-  margin: 10px 0;
-  flex-wrap: wrap;
-}
-
-.beca-tag {
-  border: 1px solid #aaa;
-  border-radius: 20px;
-  padding: 5px 14px;
-  font-size: 0.9rem;
-  background: #f9f9f9;
-}
-
-/* Calificación o rating */
-.beca-rating {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 10px 0;
-  font-size: 1rem;
-}
-
-.beca-rating span {
-  font-weight: bold;
-}
-
-/* Secciones */
-.beca-section-title {
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.beca-description {
-  line-height: 1.6;
-  margin-top: 8px;
-  font-size: 1rem;
-}
-
-/* Botón */
-.beca-button {
+/* Chips */
+.chip {
   display: inline-block;
-  background: #1062fe;
-  color: #fff;
-  padding: 12px 28px;
-  max-width: 200px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 25px;
-  transition: background 0.3s;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: .75rem;
+  line-height: 1;
+  border: 1px solid rgba(0,0,0,.08);
+  background: #fff;
+}
+.chip + .chip { margin-left: .5rem; }
+
+/* Cards */
+.detail-card {
+  border: 0;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.06);
 }
 
-.beca-button:hover {
-  background: #333;
+/* Avatar para instituciones */
+.inst-item {
+  display: flex; align-items: center;
+  gap: .5rem; padding: .35rem 0;
+}
+.inst-avatar {
+  width: 28px; height: 28px;
+  border-radius: 50%; object-fit: cover;
+  background: #eef2f7; display: inline-flex;
+  align-items: center; justify-content: center;
+  font-size: .7rem; font-weight: 700; color: #5b6b7a;
+}
+
+/* Lista sin bullets grandes */
+.ul-clean { list-style: none; padding-left: 0; margin: 0; }
+.ul-clean li { padding: .25rem 0; }
+
+/* Botón principal siempre visible al final de la tarjeta */
+.cta-row {
+  border-top: 1px dashed rgba(0,0,0,.08);
+  margin-top: .75rem; padding-top: .75rem;
+}
+
+/* Texto en columnas con un poco más de legibilidad */
+.detail-lead {
+  font-size: 1.05rem;
+  color: #374151;
 }

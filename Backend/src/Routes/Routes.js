@@ -2,8 +2,8 @@ const router = require("express").Router();
 const axios = require("axios");
 const {getInstitucion,getInstitucionesPrevias,updatePuntuacion} = require('../Controllers/Insti.controllers');
 const {getBecas,getBecaById,createBeca,updateBeca,deleteBeca} = require('../Controllers/Becas.controllers');
-const {RegistroUser,LoginUser} = require("../Controllers/User.controllers")
-const {requireAuth} = require("../Middlewares/requireAuth")
+const {RegistroUser,LoginUser,me, updateMe} = require("../Controllers/User.controllers")
+const {requireAuth,errorHandler} = require("../Middlewares/requireAuth")
 const {getCarreras,getCarreraId} = require('../Controllers/Carreras.controllers');
 
 
@@ -17,10 +17,6 @@ router.post("/instituciones/:id/updateOpinion",updatePuntuacion);
 // Becas
 router.get("/becas", getBecas);
 router.get("/becas/:id", getBecaById);
-router.post("/becas", createBeca);
-router.put("/becas/:id", updateBeca);
-router.delete("/becas/:id", deleteBeca);
-
 
 // Carreras
 router.get("/carreras", getCarreras);
@@ -30,9 +26,8 @@ router.get("/carreras/:id", getCarreraId);
 //Usuarios
 router.post("/registro",RegistroUser)
 router.post("/login",LoginUser)
-router.get("/me",requireAuth,(req,res)=>{
-    res.json({user:req.user})
-})
+router.get("/me",requireAuth, me)
+router.put("/me", requireAuth, updateMe)
 
 
 module.exports = router;
