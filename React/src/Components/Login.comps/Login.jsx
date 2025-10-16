@@ -14,7 +14,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+      setError("");
     try {
       const { data } = await api.post("/login", { email, password });
       localStorage.setItem("jwtToken", data.token);

@@ -29,7 +29,7 @@ function App() {
         <Route path="/detalle/:id" element={<Hero />} /> {/*DetalleInstituto*/}
         <Route path="/instituciones" element={<Insti />} />
         <Route path="/perfil" element={<User />} />
-        <Route path="/becasycarreras" element={<BecasCarreras />} />
+        <Route path="/becas" element={<BecasCarreras />} />
         <Route path="/becas/:id" element={<Beca />} />
         <Route path="/perfil-insti" element={<PerfilInsti />} />
         <Route path="/carreras/:id" element={<Carreras />} />
