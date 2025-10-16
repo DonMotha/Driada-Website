@@ -1,0 +1,107 @@
+/* Contenedor principal */
+.perfilinsti-container {
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+/* Conteiner alterno (como el .kaly de antes) */
+.perfilinsti-kaly {
+    margin: 1% auto;
+}
+
+/* Tarjetas de cursos */
+.perfilinsti-curso {
+    width: 14rem;
+    margin: 0 1% 2% 1%;
+}
+
+/* Fila de cursos */
+.perfilinsti-cursos-row {
+    margin: 0 5% 5% 5%;
+    text-align: center;
+}
+
+/* Features */
+.perfilinsti-features {
+    margin: 2% 0 0 3%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.perfilinsti-favos {
+    margin-top: 2%;
+}
+
+.perfilinsti-moreinfo {
+    margin-top: 2%;
+}
+
+/* Botón “Más cursos” */
+.perfilinsti-btn-cursos {
+    margin: 5% auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Caja de título */
+.perfilinsti-titlebox {
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Badges */
+.perfilinsti-rating {
+    margin-top: 20px;
+}
+
+/* star-rating */
+
+.rating-section {
+  padding: 1rem;
+  /* border-top: 1px solid #dee2e6; */
+  margin-top: 1rem;
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+}
+
+.star-rating button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 2rem;
+  transition: color 0.2s;
+}
+
+.star-rating .star.on {
+  color: #ffc107; /* Amarillo para estrellas seleccionadas */
+}
+
+.info {
+    color: #ffc107;
+    font-size: 1.5rem;
+    margin-left: 5px;
+}
+
+.star-rating .star.off {
+  color: #e4e5e9; /* Gris para estrellas no seleccionadas */
+}
+
+.star-rating button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.rating-section {
+  padding: 1rem;
+  border-top: 1px solid #dee2e6;
+  margin-top: 1rem;
+}

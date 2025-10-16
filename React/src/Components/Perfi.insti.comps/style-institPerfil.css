@@ -4,57 +4,111 @@
     margin-bottom: 1%;
 }
 
-/* Conteiner alterno (como el .kaly de antes) */
+.badge {
+    margin: 0;
+}
+
 .perfilinsti-kaly {
     margin: 1% auto;
 }
 
-/* Tarjetas de cursos */
-.perfilinsti-curso {
-    width: 14rem;
-    margin: 0 1% 2% 1%;
-}
-
-/* Fila de cursos */
-.perfilinsti-cursos-row {
-    margin: 0 5% 5% 5%;
-    text-align: center;
-}
-
-/* Features */
+/* Features - Mejorado */
 .perfilinsti-features {
-    margin: 2% 0 0 3%;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+    padding: 1rem;
 }
 
 .perfilinsti-favos {
-    margin-top: 2%;
+    width: 100%;
+    max-width: 200px;
 }
 
 .perfilinsti-moreinfo {
-    margin-top: 2%;
+    width: 100%;
+    max-width: 200px;
 }
 
-/* Botón “Más cursos” */
-.perfilinsti-btn-cursos {
-    margin: 5% auto;
+/* Rating section - Mejorado */
+.rating-section {
+    padding: 1.5rem;
+    border-top: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.star-rating {
     display: flex;
+    gap: 8px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* Caja de título */
-.perfilinsti-titlebox {
-    border: 1px solid #000;
-    border-radius: 4px;
-    padding: 8px;
-    text-align: center;
+.star-rating button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 2rem;
+    transition: transform 0.2s, color 0.2s;
 }
 
-/* Badges */
-.perfilinsti-rating {
-    margin-top: 20px;
+.star-rating button:hover {
+    transform: scale(1.1);
+}
+
+.star-rating .star.on {
+    color: #ffc107;
+}
+
+.star-rating .star.off {
+    color: #e4e5e9;
+}
+
+.star-rating button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.info {
+    color: #ffc107;
+    font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .perfilinsti-features {
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+    
+    .perfilinsti-favos,
+    .perfilinsti-moreinfo {
+        max-width: 150px;
+    }
+    
+    .star-rating button {
+        font-size: 1.5rem;
+    }
+    
+    .rating-section {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .perfilinsti-features {
+        flex-direction: column;
+    }
+    
+    .star-rating {
+        gap: 5px;
+    }
+    
+    .star-rating button {
+        font-size: 1.8rem;
+    }
 }
