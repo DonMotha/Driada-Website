@@ -9,7 +9,7 @@ import logo from "../../../src/assets/logo.png";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [ setError] = useState("");
+  const [ error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -33,9 +33,9 @@ return (
     <div className="row align-items-center min-vh-75">
       {/* Izquierda: background con ilustración (no empuja el layout) */}
       <div className="col-12 col-lg-6 d-none d-lg-block">
-        <div className="login-hero-bg h-100 d-flex flex-column justify-content-center ps-5">
+        <div className="login-hero h-100 d-flex flex-column justify-content-center ps-5">
           <h2 className="display-6 fw-bold mb-3">Encuentra tu beca ideal</h2>
-          <p className="text-muted mb-0">Explora instituciones, carreras y beneficios.</p>
+          <p className="text-muted mb-4">Explora instituciones, carreras y beneficios.</p>
           <img src={logo} alt="Ilustración" className="img-fluid hero-illustration" />
           
         </div>
@@ -74,6 +74,7 @@ return (
                 </button>
               </div>
             </form>
+            {error && <p className="text-danger mt-2" role="alert">{error}</p>}
         </div>
       </div>
     </div>

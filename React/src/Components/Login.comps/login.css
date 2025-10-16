@@ -1,13 +1,11 @@
 /* Contenedor del formulario */
 .login-container {
-  background-color: #f9f9f9;
-  padding: 20px;
+  background-color: #fff;
+  padding: 24px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  width: 100%;
-  max-width: 420px;
-  text-align: center;
-  margin: 0 auto; /* centrar dentro de la columna */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 /* Logo + App name */

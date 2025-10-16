@@ -63,61 +63,57 @@ function Register() {
         {/* Columna derecha: formulario */}
         <div className="col-12 col-lg-5">
           <div className="login-container ms-lg-5">
-            <div className="login-logo">
-              <img src={logo} alt="Logo Quiero mi beca" width="100" />
-              <h2 className="login-appname">Quiero mi beca</h2>
-            </div>
+            
+              <form className="login-form" onSubmit={handleSubmit}>
+                <input
+                  className="form-control mb-2"
+                  type="text"
+                  name="nombre"
+                  placeholder="Nombre completo"
+                  value={form.nombre}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  className="form-control mb-2"
+                  type="email"
+                  name="email"
+                  placeholder="Correo electrónico"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  className="form-control mb-3"
+                  type="password"
+                  name="password"
+                  placeholder="Contraseña"
+                  value={form.password}
+                  onChange={handleChange}
+                  required
+                />
+                <div className="d-flex gap-2">
+                  <button type="submit" className="btn      btn-primary w-100">
+                    Registrarse
+                  </button>
+                </div>
+                </form>
 
-            <h1 className="login-title">Crear cuenta</h1>
+                {error && (
+                  <p className="text-danger mt-2" role="alert">
+                    {error}
+                  </p>
+                )}
+                {ok && <p className="text-success mt-2">Cuenta creada. Redirigiendo…</p>}
 
-            <form className="login-form" onSubmit={handleSubmit}>
-              <input
-                className="form-control mb-2"
-                type="text"
-                name="nombre"
-                placeholder="Nombre completo"
-                value={form.nombre}
-                onChange={handleChange}
-                required
-              />
-              <input
-                className="form-control mb-2"
-                type="email"
-                name="email"
-                placeholder="Correo electrónico"
-                value={form.email}
-                onChange={handleChange}
-                required
-              />
-              <input
-                className="form-control mb-3"
-                type="password"
-                name="password"
-                placeholder="Contraseña"
-                value={form.password}
-                onChange={handleChange}
-                required
-              />
-
-              <button type="submit" className="btn btn-primary w-100">
-                Registrarse
-              </button>
-            </form>
-
-            {error && (
-              <p className="text-danger mt-2" role="alert">
-                {error}
-              </p>
-            )}
-            {ok && <p className="text-success mt-2">Cuenta creada. Redirigiendo…</p>}
-
-            <p className="login-register-text mt-2">
-              ¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link>
-            </p>
+                <p className="login-register-text mt-2">
+                  ¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link>
+                </p>
+              </div>
           </div>
         </div>
       </div>
-    </div>
+    
   );
 }
 
