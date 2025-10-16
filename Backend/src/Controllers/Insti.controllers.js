@@ -50,7 +50,7 @@ const getInstitucion = async (req, res) => {
       nombre: inst.nombre ?? inst.Nombre ?? null,
       tipo: inst.tipo ?? inst.Tipo ?? null,
       localidad: inst.localidad ?? inst.Localidad ?? null,
-      descripcion: inst.descripcion ?? inst.Description ?? null,
+      descripcion: inst.descripcion ?? inst.Descripcion ?? null,
       link: inst.link ?? inst.Link ?? null,
       img: inst.img ?? inst.Img ?? null,
       puntuacion: inst.puntuacion ?? inst.Puntuacion ?? null,

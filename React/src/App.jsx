@@ -7,9 +7,8 @@ import Insti from "../src/Components/Insti.comps/insti";
 import User from "./Components/Perfi.User.comps/User";
 import BecasCarreras from "../src/Components/Becas.comps/Becas-C";
 import Beca from "./Components/Perfi.becas.comps/Beca";
-import PerfilInsti from "./Components/Perfi.insti.comps/Hero";
+import PerfilInsti from "./Components/Perfi.insti.comps/PerfilInsti";
 import Carreras from "./Components/Carreras.comps/Carreras";
-import Hero from "./Components/Perfi.insti.comps/Hero";
 import '../src/App.css';
 import '../src/Components/Home.comps/stylehome.css'
 import "./Components/Nav.comps/Navbar";
@@ -18,28 +17,20 @@ import "./Components/Foot.comps/Footer";
 
 function App() {
 
-
   return (
     <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/detalle/:id" element={<Hero />} /> {/*DetalleInstituto*/}
+        <Route path="/detalle/:id" element={<PerfilInsti />} /> {/*DetalleInstituto*/}
         <Route path="/instituciones" element={<Insti />} />
         <Route path="/perfil" element={<User />} />
         <Route path="/becasycarreras" element={<BecasCarreras />} />
         <Route path="/perfil-beca/:id" element={<Beca />} />
-        <Route path="/perfil-insti" element={<PerfilInsti />} />
         <Route path="/carreras/:id" element={<Carreras />} />
-
-
       </Routes>
-
       <Footer />
-
     </>
-
-
   );
 }
 

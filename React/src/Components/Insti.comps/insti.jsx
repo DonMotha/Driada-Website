@@ -5,7 +5,6 @@ import InstitutionsGrid from "./components/InstiGrid";
 import { fetchInstitucionesPrevias } from "../../api/instituciones";
 import "../../../src/Components/Insti.comps/insti.css"; 
 
-
 export default function Insti() {
   //useState es el estado local
   //setQ : es una funcion para actualizar el estado

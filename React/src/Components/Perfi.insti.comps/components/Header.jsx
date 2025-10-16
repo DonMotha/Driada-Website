@@ -8,7 +8,7 @@ function Header() {
                 <div className="col-md-2 justify-text-center">
                     <div className="card">
                         <div className="card-body fw-medium">
-                            Perfil Institución
+                            <h5>Perfil Institución</h5>
                         </div>
                     </div>
                 </div>
