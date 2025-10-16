@@ -35,7 +35,7 @@ function Footer() {
                 <hr className="hr-soft"/>
                     <div className="row">
                         <div className="col-12 text-center">
-                            <p className="mb-0">&copy;  2025 Dirada. Todos los derechos reservados.</p>
+                            <p className="mb-0">&copy;  2025 Driada. Todos los derechos reservados.</p>
                         </div>
                     </div>
             </div>
