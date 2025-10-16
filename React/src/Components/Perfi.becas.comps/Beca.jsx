@@ -109,9 +109,9 @@ export default function DetalleBeca() {
               {!inst ? (
                 <p className="mb-0 text-muted">No registrada</p>
               ) : (
-                <ul className="mb-0">
+                <ul className="mb-0 list-unstyled">
                   <li>
-                    <Link to={`/detalle/${inst.id}`}>
+                    <Link to={`/detalle/${inst.id}`} className="text-dark text-decoration-none link-clean" >
                       {inst.nombre || inst.id}
                     </Link>
                   </li>

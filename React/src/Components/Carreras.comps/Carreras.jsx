@@ -128,7 +128,7 @@ export default function DetalleCarrera() {
               <h5 className="fw-semibold">Instituciones que la imparten</h5>
               {!insts.length && <p className="mb-0 text-muted">No registradas</p>}
               {!!insts.length && (
-                <ul className="mb-0">
+                <ul className="mb-0 list-unstyled" >
                   {insts.map((u) => (
                     <li key={u.id} className="mb-1">
                       {u.img && (
@@ -139,7 +139,7 @@ export default function DetalleCarrera() {
                           className="me-2 rounded"
                         />
                       )}
-                      <Link to={`/detalle/${u.id}`}>{u.nombre || u.id}</Link>
+                      <Link to={`/detalle/${u.id}`} className="text-dark text-decoration-none link-clean">{u.nombre || u.id}</Link>
                     </li>
                   ))}
                 </ul>

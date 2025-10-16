@@ -53,3 +53,8 @@
   font-size: 1.05rem;
   color: #374151;
 }
+
+.link-clean:hover {
+  color: #333 !important;
+  text-decoration: underline !important; /* Opcional: subrayar al hover */
+}
