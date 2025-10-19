@@ -1,10 +1,4 @@
 /.vscode
-<<<<<<< HEAD
-/.env
-./Backend/node_modules
-./Backend/.env
-=======
 
 /Backend/node_modules
 /Backend/.env
->>>>>>> d477f1cbac9cff9ec836d72b52838a669cdaa1ff
