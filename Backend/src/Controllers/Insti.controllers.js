@@ -1,4 +1,3 @@
-
 const Institucion = require("../Models/InstitucionModel");
 const { isValidObjectId } = require('mongoose'); 
 
@@ -34,7 +33,7 @@ const getInstitucionesPrevias = async (req, res) => {
   nombre: d.nombre ?? d.Nombre ?? null,
   tipo: d.tipo ?? d.Tipo ?? null,
   puntuacion: d.puntuacion ?? d.Puntuacion ?? null,
-  img: sanitizeUrl (d.img ?? null)  
+  img:  sanitizeUrl(d.img ?? null)  
     }));
 
     // Retornas data y da el estatus 200

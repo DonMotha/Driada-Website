@@ -18,23 +18,25 @@ function PerfilInsti() {
     const [error, setError] = useState(null);
     const [refresh, setRefresh] = useState(0);
 
-    const cargarInstitucion = async () => {
-        try {
-            setLoading(true);
-            const data = await fetchInstituciones(id);
-            setInstitucion(data);
-        } catch (err) {
-            console.error("Error cargando institución:", err);
-            setError("No se pudo cargar la información de la institución");
-        } finally {
-            setLoading(false);
-        }
-    };
-
     useEffect(() => {
+
+        const cargarInstitucion = async () => {
+            try {
+                setLoading(true);
+                const data = await fetchInstituciones(id);
+                setInstitucion(data);
+            } catch (err) {
+                console.error("Error cargando institución:", err);
+                setError("No se pudo cargar la información de la institución");
+            } finally {
+                setLoading(false);
+            }
+        };
+
         if (id) {
             cargarInstitucion();
         }
+        
     }, [id, refresh]);
 
     // Función para recargar los datos después de una votación
